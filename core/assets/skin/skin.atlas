@@ -1,0 +1,222 @@
+
+skin.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+desert/camel
+  rotate: false
+  xy: 2, 1272
+  size: 283, 283
+  orig: 283, 283
+  offset: 0, 0
+  index: -1
+desert/desert
+  rotate: false
+  xy: 2, 702
+  size: 283, 283
+  orig: 283, 283
+  offset: 0, 0
+  index: -1
+desert/mineralsd
+  rotate: false
+  xy: 404, 1391
+  size: 283, 283
+  orig: 283, 283
+  offset: 0, 0
+  index: -1
+desert/pyramids
+  rotate: false
+  xy: 1259, 1391
+  size: 283, 283
+  orig: 283, 283
+  offset: 0, 0
+  index: -1
+desert/quicksands
+  rotate: false
+  xy: 1544, 1391
+  size: 283, 283
+  orig: 283, 283
+  offset: 0, 0
+  index: -1
+drop
+  rotate: false
+  xy: 287, 1531
+  size: 24, 24
+  orig: 24, 24
+  offset: 0, 0
+  index: -1
+forest/deepforest
+  rotate: false
+  xy: 2, 987
+  size: 283, 283
+  orig: 283, 283
+  offset: 0, 0
+  index: -1
+forest/deer
+  rotate: false
+  xy: 974, 1676
+  size: 283, 283
+  orig: 283, 283
+  offset: 0, 0
+  index: -1
+forest/forest
+  rotate: false
+  xy: 1259, 1676
+  size: 283, 283
+  orig: 283, 283
+  offset: 0, 0
+  index: -1
+forest/temple
+  rotate: false
+  xy: 572, 1106
+  size: 283, 283
+  orig: 283, 283
+  offset: 0, 0
+  index: -1
+forest/village
+  rotate: false
+  xy: 287, 536
+  size: 283, 283
+  orig: 283, 283
+  offset: 0, 0
+  index: -1
+gui/button-down
+  rotate: false
+  xy: 2, 1759
+  size: 400, 200
+  orig: 400, 200
+  offset: 0, 0
+  index: -1
+gui/button-up
+  rotate: false
+  xy: 2, 1557
+  size: 400, 200
+  orig: 400, 200
+  offset: 0, 0
+  index: -1
+lightning
+  rotate: false
+  xy: 1829, 1831
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+mountains/cave
+  rotate: false
+  xy: 689, 1676
+  size: 283, 283
+  orig: 283, 283
+  offset: 0, 0
+  index: -1
+mountains/glacier
+  rotate: false
+  xy: 2, 417
+  size: 283, 283
+  orig: 283, 283
+  offset: 0, 0
+  index: -1
+mountains/landslide
+  rotate: false
+  xy: 2, 132
+  size: 283, 283
+  orig: 283, 283
+  offset: 0, 0
+  index: -1
+mountains/mineralsm
+  rotate: false
+  xy: 689, 1391
+  size: 283, 283
+  orig: 283, 283
+  offset: 0, 0
+  index: -1
+mountains/mountains
+  rotate: false
+  xy: 974, 1391
+  size: 283, 283
+  orig: 283, 283
+  offset: 0, 0
+  index: -1
+mountains/rock
+  rotate: false
+  xy: 287, 821
+  size: 283, 283
+  orig: 283, 283
+  offset: 0, 0
+  index: -1
+nowalking
+  rotate: false
+  xy: 572, 848
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+players/player1
+  rotate: false
+  xy: 857, 1133
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+players/player2
+  rotate: false
+  xy: 287, 278
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+players/player3
+  rotate: false
+  xy: 572, 590
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+players/player4
+  rotate: false
+  xy: 1115, 1133
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+snow
+  rotate: false
+  xy: 2, 2
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+snow2
+  rotate: false
+  xy: 287, 148
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+walking
+  rotate: false
+  xy: 1373, 1133
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+water/bridge
+  rotate: false
+  xy: 404, 1676
+  size: 283, 283
+  orig: 283, 283
+  offset: 0, 0
+  index: -1
+water/harbour
+  rotate: false
+  xy: 1544, 1676
+  size: 283, 283
+  orig: 283, 283
+  offset: 0, 0
+  index: -1
+water/river
+  rotate: false
+  xy: 287, 1106
+  size: 283, 283
+  orig: 283, 283
+  offset: 0, 0
+  index: -1

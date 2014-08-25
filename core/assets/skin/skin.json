@@ -1,0 +1,29 @@
+{
+    com.badlogic.gdx.graphics.Color: {
+        text-main: { r: 0, g: 0, b: 0, a: 1 },
+        gray: { r: 0.7, g: 0.7, b: 0.7 },
+    },
+    com.badlogic.gdx.graphics.g2d.BitmapFont: {
+        default: {
+            file: opensans.fnt
+        }
+    },
+    com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle: {
+        default: {
+            font: default,
+            fontColor: text-main
+        },
+        gray: {
+            font: default,
+            fontColor: gray
+        }
+    },
+    com.badlogic.gdx.scenes.scene2d.ui.TextButton$TextButtonStyle: {
+        default: {
+            font: default,
+            up: gui/button-up,
+            down: gui/button-down,
+            fontColor: { r: 0.1, g: 0.05, b: 0 }
+        }
+    }
+}
