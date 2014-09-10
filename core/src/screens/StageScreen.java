@@ -33,19 +33,16 @@ public abstract class StageScreen implements Screen {
     }
 
     @Override public void resize(int width, int height) {
-        //stage.setViewport(width, height, true);
+        stage.getViewport().update(width, height,true);
     }
 
     protected abstract void onHide();
 
     protected abstract void onShow();
 
-    @Override public void pause() {
+    @Override public void pause() {}
 
-    }
-
-    @Override public void resume() {
-    }
+    @Override public void resume() {}
 
     @Override public void dispose() {}
 }

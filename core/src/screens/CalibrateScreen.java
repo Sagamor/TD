@@ -1,6 +1,7 @@
 package screens;
 
 import TUIO.*;
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
@@ -22,9 +23,9 @@ public class CalibrateScreen extends StageScreen implements TuioListener {
     public static Vector2 bottomRight = new Vector2(1,0);;
     public static Vector2 topLeft = new Vector2(0,1);;
 
-    private Main main;
+    private Game main;
 
-    public CalibrateScreen(Main main) {
+    public CalibrateScreen(Game main) {
         this.main = main;
     }
 

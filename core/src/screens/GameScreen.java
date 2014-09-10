@@ -18,19 +18,9 @@ public class GameScreen extends StageScreen {
 
     @Override public void onShow() {
 
-//        BoardDescription boardDescription = new Json().fromJson(BoardDescription.class, Gdx.files.internal("board.json"));
-//        PlanetDescription planetDescription = new Json().fromJson(PlanetDescription.class, Gdx.files.internal("cards.json"));
-//        GameEventsDescription eventsDescription = new Json().fromJson(GameEventsDescription.class, Gdx.files.internal("events.json"));
-
-//        System.out.println(planetDescription);
-//        System.out.println(boardDescription);
-//        System.out.println(eventsDescription);
-
         Board board = new Board();
         board.bgColor = bgColor;
-
-        UIController uiController = new UIController(stage, board);
-//        GameMaster gameMaster = new GameMaster(stage, board, eventsDescription);
+        UIController ui = new UIController(stage, board);
         MarkerController markers = new MarkerController(board, client);
 
         client.addTuioListener(markers);

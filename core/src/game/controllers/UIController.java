@@ -63,11 +63,10 @@ public class UIController {
 
         wrapperTable.setTransform(true);
         wrapperTable.setFillParent(true);
-        board.setScale(0.92f);
         board.setSize(board.getWidth() * board.getScaleX(), board.getHeight() * board.getScaleY());
         stage.addActor(board);
         wrapperTable.add(board).expand(2,1).align(Align.center);
-        wrapperTable.add(infoTable).width(1920 / 3f).center().left();
+//        wrapperTable.add(infoTable).width(1920 / 3f).center().left();
 
         stage.addActor(wrapperTable);
 //        stabilityUpdate();

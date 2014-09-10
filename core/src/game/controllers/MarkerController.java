@@ -47,10 +47,6 @@ public class MarkerController implements TuioListener {
                 playerCoords.put(marker, coords);
             }
 
-//                if (tobj.getSymbolID() == 116) {
-//                    Coordinate coords = coordinateTransform(tobj);
-//                    board.updateMarkerStability(coords.x);
-//                }
             }
         });
     }
@@ -71,10 +67,6 @@ public class MarkerController implements TuioListener {
                     }
                 }
 
-//                if (tobj.getSymbolID() == 116) {
-//                    board.updateMarkerStability(coords.x);
-//                }
-
             }
         });
     }
@@ -90,14 +82,6 @@ public class MarkerController implements TuioListener {
     }
 
     public Coordinate coordinateTransform(TuioObject tobj) {
-//        float x = 1 - tobj.getX();
-//        float y = tobj.getY();
-//        x = x * Gdx.graphics.getWidth();
-//        y = y * Gdx.graphics.getHeight();
-//        Vector2 boardCoordinate = board.screenToLocalCoordinates(new Vector2(x, y));
-//        int boardCoordinateX = (int) (boardCoordinate.x / Board.CELL_SIZE);
-//        int boardCoordinateY = (int) (boardCoordinate.y / Board.CELL_SIZE);
-//        return new Coordinate(boardCoordinateX, boardCoordinateY);
 
         Vector2 point = new Vector2(1-tobj.getX(), tobj.getY()).scl(1000f);
 
@@ -122,10 +106,6 @@ public class MarkerController implements TuioListener {
 
         float pX = pointX+0.5f;
         float pY = pointY+0.5f;
-
-//        System.out.println(tobj.getSymbolID() + " : " + pX + " : " + pY);
-//        System.out.println(tobj.getSymbolID() + " : " + point);
-//        System.out.println(tobj.getSymbolID() + " : " + new Coordinate(MathUtils.floor(pointX+0.5f), MathUtils.floor(pointY+0.5f)));
 
         return new Coordinate(MathUtils.floor(pX), MathUtils.floor(pY));
     }

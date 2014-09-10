@@ -5,6 +5,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.utils.ObjectMap;
+import game.actors.BoardView;
 import game.controllers.UIController;
 
 public class Board extends Group {
@@ -34,6 +35,7 @@ public class Board extends Group {
 
         setSize(width * CELL_SIZE, height * CELL_SIZE);
         //data.get(new Coordinate(1,1));
+        addActor(new BoardView(this));
 
         addActor(fieldLayer);
         addActor(playerLayer);
