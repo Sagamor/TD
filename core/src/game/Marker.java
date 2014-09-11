@@ -1,12 +1,12 @@
 package game;
 
 import TUIO.TuioObject;
-import game.actors.CircleShapeActor;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.utils.IntMap;
+import game.actors.CircleShapeActor;
 
 /**
  * Created by  Sagamor on 24/03/2014.
@@ -17,12 +17,17 @@ public class Marker extends Group {
     public TuioObject tobj;
 
     private static IntMap<String> idToFileName = new IntMap<String>();
+
     static {
         idToFileName.put(109, "green"); // green tower
         idToFileName.put(110, "blue"); // blue tower
         idToFileName.put(115, "yellow"); // yellow tower
         idToFileName.put(117, "red"); // red tower
         idToFileName.put(116, "castle"); // castle
+    }
+
+    public int getId() {
+        return tobj.getSymbolID();
     }
 
     public Marker(TuioObject tobj) {
@@ -112,7 +117,7 @@ public class Marker extends Group {
         CircleShapeActor circleNew = new CircleShapeActor();
         circleNew.setSize(Board.CELL_SIZE / 3f, Board.CELL_SIZE / 3f);
         circleNew.setPosition(Board.CELL_SIZE / 2f - circleNew.getWidth() / 2f, Board.CELL_SIZE / 2f - circleNew.getHeight() / 2f);
-        circleNew.setColor(0,0,0,0);
+        circleNew.setColor(0, 0, 0, 0);
         circleNew.setColor(getColor(idToFileName.get(tobj.getSymbolID())));
         addActor(circleNew);
         return circleNew;

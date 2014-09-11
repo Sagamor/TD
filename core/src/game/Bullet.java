@@ -1,5 +1,7 @@
 package game;
 
+import game.entities.Tower;
+
 /**
  * Created by Sagamor on 25/08/2014.
  */

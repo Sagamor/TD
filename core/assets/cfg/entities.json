@@ -1,0 +1,54 @@
+{
+    "116": {
+        "type": "castle",
+        "hp": 100
+    },
+    "109": {
+        "type": "tower",
+        "hp": 100,
+        "expsPerLevel": [0, 10, 30, 60, 100, 150],
+        "towerStats": {
+            "speed": 1
+        },
+        "bulletStats": {
+            "speed": 1,
+            "damage": 5
+        }
+    },
+    "110": {
+        "type": "tower",
+        "hp": 100,
+        "expsPerLevel": [0, 10, 30, 60, 100, 150],
+        "towerStats": {
+            "speed": 1
+        },
+        "bulletStats": {
+            "speed": 1,
+            "damage": 5
+        }
+    },
+    "115": {
+        "type": "tower",
+        "hp": 100,
+        "expsPerLevel": [0, 10, 30, 60, 100, 150],
+        "towerStats": {
+            "speed": 1
+        },
+        "bulletStats": {
+            "speed": 1,
+            "damage": 5
+        }
+    },
+    "117": {
+        "type": "tower",
+        "hp": 100,
+        "expsPerLevel": [0, 10, 30, 60, 100, 150],
+        "towerStats": {
+            "speed": 1
+        },
+        "bulletStats": {
+            "speed": 1,
+            "damage": 5
+        }
+    }
+}
