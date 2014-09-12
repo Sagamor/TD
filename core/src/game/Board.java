@@ -3,6 +3,8 @@ package game;
 import TUIO.TuioObject;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.math.MathUtils;
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.utils.ObjectMap;
 import game.actors.BoardView;
@@ -69,7 +71,25 @@ public class Board extends Group {
 
     public void removeMarker(TuioObject tobj) {
         Marker marker = markers.remove(tobj);
-        if (marker != null)
+        if (marker != null) {
             marker.remove();
+            if (marker instanceof Castle) {
+                castles.remove(tobj);
+            }
+            if (marker instanceof Tower) {
+                towers.remove(tobj);
+            }
+        }
+    }
+
+    public void addMonster(Monster monster) {
+        addActor(monster);
+        float cx = width / 2 * CELL_SIZE;
+        float cy = height / 2 * CELL_SIZE;
+        float distance = (width + 2) * CELL_SIZE;
+        float angle = MathUtils.random(0, 360);
+        Vector2 pos = new Vector2(0, distance).rotate(angle).add(cx, cy);
+        monster.setPosition(pos.x, pos.y);
+
     }
 }

@@ -3,16 +3,18 @@
         "hp": 20,
         "speed": 0.2,
         "damage": 5,
-        "image": ""
+        "image": "monsters/normal"
     },
     "swarm": {
         "hp": 5,
         "speed": 0.6,
-        "damage": 1
+        "damage": 1,
+        "image": "monsters/swarm"
     },
     "boss": {
         "hp": 100,
         "speed": 0.05,
-        "damage": 25
+        "damage": 25,
+        "image": "monsters/boss"
     }
 }

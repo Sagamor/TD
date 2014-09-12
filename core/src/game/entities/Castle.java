@@ -9,12 +9,8 @@ import game.descriptions.entities.CastleDescription;
  */
 public class Castle extends Marker {
 
-    public int hp;
-    public int exp;
-    public int level;
-
     public Castle(TuioObject tobj, CastleDescription castleDescription) {
-
+        super(tobj);
     }
 
 }

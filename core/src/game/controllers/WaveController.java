@@ -1,10 +1,12 @@
 package game.controllers;
 
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.ObjectMap;
 import game.Board;
 import game.Config;
+import game.Monster;
 import game.descriptions.WaveDescription;
 import game.descriptions.monsters.MonsterDescription;
 import game.descriptions.waves.WaveParams;
@@ -54,7 +56,8 @@ public class WaveController {
     }
 
     private void spawnMonster(MonsterDescription desc) {
-
+        Monster monster = new Monster(desc, board);
+        board.addMonster(monster);
     }
 
     private float calcMaxWaveTime(ObjectMap.Values<WaveParams> values) {

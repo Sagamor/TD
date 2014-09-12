@@ -14,20 +14,6 @@ public class Cell extends Group {
         square.setSize(Board.CELL_SIZE - 4, Board.CELL_SIZE - 4);
     }
 
-//    public Color getColor(Terrain terrain) {
-//        switch (terrain) {
-//            case forest:
-//                return Color.valueOf("458C30");
-//            case water:
-//                return Color.valueOf("2E73AB");
-//            case mountains:
-//                return Color.valueOf("51423A");
-//            case desert:
-//                return Color.valueOf("FFDE00");
-//        }
-//        throw new IllegalStateException("no color for " + terrain);
-//    }
-
     public void occupy(Board board) {
         clearChildren();
         isEmpty = false;

@@ -73,46 +73,6 @@ public class Marker extends Group {
         ));
     }
 
-    public Marker() {
-        CircleShapeActor chip = new CircleShapeActor();
-        //chip.setPosition(Board.CELL_SIZE * 2, Board.CELL_SIZE * 2);
-        chip.setSize(Board.CELL_SIZE / 3f, Board.CELL_SIZE / 3f);
-        chip.setColor(getColor(idToFileName.get(tobj.getSymbolID())));
-        addActor(chip);
-
-        final CircleShapeActor circle1 = createCircle();
-        final CircleShapeActor circle2 = createCircle();
-        final CircleShapeActor circle3 = createCircle();
-
-        circle1.addAction(Actions.sequence(
-                Actions.delay(0),
-                Actions.run(new Runnable() {
-                    @Override
-                    public void run() {
-                        animate(circle1);
-                    }
-                })
-        ));
-        circle2.addAction(Actions.sequence(
-                Actions.delay(0.7f),
-                Actions.run(new Runnable() {
-                    @Override
-                    public void run() {
-                        animate(circle2);
-                    }
-                })
-        ));
-        circle3.addAction(Actions.sequence(
-                Actions.delay(1.5f),
-                Actions.run(new Runnable() {
-                    @Override
-                    public void run() {
-                        animate(circle3);
-                    }
-                })
-        ));
-    }
-
     public CircleShapeActor createCircle() {
         CircleShapeActor circleNew = new CircleShapeActor();
         circleNew.setSize(Board.CELL_SIZE / 3f, Board.CELL_SIZE / 3f);

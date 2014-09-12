@@ -7,6 +7,7 @@ public class MonsterDescription {
     public float hp;
     public float speed;
     public float damage;
+    public String image;
 
     @Override
     public String toString() {
@@ -14,6 +15,7 @@ public class MonsterDescription {
                 "hp=" + hp +
                 ", speed=" + speed +
                 ", damage=" + damage +
+                ", image='" + image + '\'' +
                 '}';
     }
 }
