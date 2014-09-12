@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.Group;
+import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.ObjectMap;
 import game.actors.BoardView;
 import game.controllers.UIController;
@@ -30,6 +31,7 @@ public class Board extends Group {
     public final Group effectLayer = new Group();
     public final Group fieldLayer = new Group();
     public final Group playerLayer = new Group();
+    public Array<Monster> monsters = new Array<Monster>();
 
     public Board() {
         width = 8;
@@ -63,7 +65,7 @@ public class Board extends Group {
         if (marker instanceof Castle) {
             castles.put(tobj, ((Castle) marker));
         }
-
+        marker.board = this;
         markers.put(tobj, marker);
         marker.setPosition(coords.x * CELL_SIZE, coords.y * CELL_SIZE);
         playerLayer.addActor(marker);
@@ -90,6 +92,11 @@ public class Board extends Group {
         float angle = MathUtils.random(0, 360);
         Vector2 pos = new Vector2(0, distance).rotate(angle).add(cx, cy);
         monster.setPosition(pos.x, pos.y);
+        monsters.add(monster);
+    }
 
+    public void removeMonster(Monster monster) {
+        monster.remove();
+        monsters.removeValue(monster, true);
     }
 }

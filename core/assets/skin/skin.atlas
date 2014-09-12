@@ -1,47 +1,103 @@
 
 skin.png
-size: 726,470
+size: 1020,497
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
 gui/button-down
   rotate: false
-  xy: 2, 270
+  xy: 346, 297
   size: 400, 200
   orig: 400, 200
   offset: 0, 0
   index: -1
 gui/button-up
   rotate: false
-  xy: 2, 68
+  xy: 346, 95
   size: 400, 200
   orig: 400, 200
   offset: 0, 0
   index: -1
 monsters/boss
   rotate: false
-  xy: 2, 2
+  xy: 2, 85
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: -1
 monsters/normal
   rotate: false
-  xy: 404, 148
+  xy: 748, 175
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: -1
 monsters/swarm
   rotate: false
-  xy: 662, 406
+  xy: 2, 19
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+objects/bullet
+  rotate: false
+  xy: 1006, 482
+  size: 14, 15
+  orig: 14, 15
+  offset: 0, 0
+  index: -1
+objects/bullet_c
+  rotate: false
+  xy: 2, 2
+  size: 14, 15
+  orig: 14, 15
+  offset: 0, 0
+  index: -1
+objects/castle
+  rotate: false
+  xy: 2, 151
+  size: 342, 346
+  orig: 342, 346
+  offset: 0, 0
+  index: -1
+objects/tower
+  rotate: false
+  xy: 68, 85
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+objects/tower_blue
+  rotate: false
+  xy: 748, 109
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+objects/tower_green
+  rotate: false
+  xy: 814, 175
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+objects/tower_red
+  rotate: false
+  xy: 68, 19
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+objects/tower_yellow
+  rotate: false
+  xy: 134, 85
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: -1
 opensans
   rotate: false
-  xy: 404, 214
+  xy: 748, 241
   size: 256, 256
   orig: 256, 256
   offset: 0, 0

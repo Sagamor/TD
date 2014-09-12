@@ -12,7 +12,9 @@
         },
         "bulletStats": {
             "speed": 1,
-            "damage": 5
+            "damage": 1,
+            "dotDamage": 4,
+            "dotTime": 2
         }
     },
     "110": {
@@ -24,7 +26,9 @@
         },
         "bulletStats": {
             "speed": 1,
-            "damage": 5
+            "damage": 5,
+            "slowTime": 3,
+            "slowFactor": 0.5
         }
     },
     "115": {
@@ -36,7 +40,10 @@
         },
         "bulletStats": {
             "speed": 1,
-            "damage": 5
+            "damage": 2,
+            "chainProbability": 0.5,
+            "chainProbabilityMultiplier": 0.5,
+            "chainDamageMultiplier": 0.5
         }
     },
     "117": {
@@ -48,7 +55,8 @@
         },
         "bulletStats": {
             "speed": 1,
-            "damage": 5
+            "damage": 5,
+            "instantKillProbability": 0.5
         }
     }
 }

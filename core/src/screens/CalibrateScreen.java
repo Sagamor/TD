@@ -34,6 +34,7 @@ public class CalibrateScreen extends StageScreen implements TuioListener {
         final TuioClient client = new TuioClient();
         client.addTuioListener(calibrateScreen);
         client.connect();
+        Config.tuio = client;
 
         TextButton button = new TextButton("Play", Config.skin);
         button.setSize(50, 20);

@@ -45,6 +45,7 @@ public class TowerDefence extends Game {
         Config.entityDescriptions = cfgJson.fromJson(IntMap.class, Gdx.files.internal("cfg/entities.json"));
         Config.monsterDescriptions = cfgJson.fromJson(ObjectMap.class, MonsterDescription.class, Gdx.files.internal("cfg/monsters.json"));
         Config.waveDescriptions = new Array<WaveDescription>();
+        Config.app = this;
         for (JsonValue value : new JsonReader().parse(Gdx.files.internal("cfg/waves.json"))) {
             Config.waveDescriptions.add(cfgJson.readValue(WaveDescription.class, value));
         }

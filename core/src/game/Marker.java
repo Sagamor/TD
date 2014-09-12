@@ -26,6 +26,8 @@ public class Marker extends Group {
         idToFileName.put(116, "castle"); // castle
     }
 
+    public Board board;
+
     public int getId() {
         return tobj.getSymbolID();
     }
