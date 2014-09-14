@@ -20,5 +20,5 @@ public class TowerStats {
     }
 
     public float speed;
-    public float radius = 1.5f;
+    public float radius;
 }

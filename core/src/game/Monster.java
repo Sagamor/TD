@@ -82,18 +82,19 @@ public class Monster extends Group implements HasHp {
         return desc.hp;
     }
 
-    public void setHp(float hp) {
+    public void setHp(float hp, Tower attackingTower) {
         if (this.hp == hp)
             return;
         this.hp = hp;
         if (hp <= 0) {
             board.removeMonster(this);
+            attackingTower.addExp(desc.exp);
         }
     }
 
-    public void addDot(final BulletStats damageOverTime) {
+    public void addDot(final BulletStats damageOverTime, final Tower attackingTower) {
         if (damageOverTime.dotTime <= 0) {
-            setHp(getHp() - damageOverTime.dotDamage);
+            setHp(getHp() - damageOverTime.dotDamage, attackingTower);
             return;
         }
         final float dps = damageOverTime.dotDamage / damageOverTime.dotTime;
@@ -102,7 +103,7 @@ public class Monster extends Group implements HasHp {
 
             @Override
             public boolean act(float delta) {
-                setHp(getHp() - delta * dps);
+                setHp(getHp() - delta * dps, attackingTower);
                 accumulated += delta;
                 return accumulated >= damageOverTime.dotTime;
             }

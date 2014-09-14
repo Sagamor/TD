@@ -8,7 +8,8 @@
         "hp": 100,
         "expsPerLevel": [0, 10, 30, 60, 100, 150],
         "towerStats": {
-            "speed": 1
+            "speed": 1,
+            "radius": 1.5
         },
         "bulletStats": {
             "speed": 1,
@@ -22,7 +23,8 @@
         "hp": 100,
         "expsPerLevel": [0, 10, 30, 60, 100, 150],
         "towerStats": {
-            "speed": 1
+            "speed": 1,
+            "radius": 1.5
         },
         "bulletStats": {
             "speed": 1,
@@ -36,7 +38,8 @@
         "hp": 100,
         "expsPerLevel": [0, 10, 30, 60, 100, 150],
         "towerStats": {
-            "speed": 1
+            "speed": 1,
+            "radius": 1.5
         },
         "bulletStats": {
             "speed": 1,
@@ -51,7 +54,8 @@
         "hp": 100,
         "expsPerLevel": [0, 10, 30, 60, 100, 150],
         "towerStats": {
-            "speed": 1
+            "speed": 1,
+            "radius": 1.5
         },
         "bulletStats": {
             "speed": 1,

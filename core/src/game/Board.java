@@ -49,9 +49,11 @@ public class Board extends Group {
 
     public void move(int x, int y, TuioObject tobj) {
         //System.out.println(tobj.getSymbolID() + " @ " + x + " : " + y);
-        Cell cell = data.get(new Coordinate(x, y));
+        Coordinate coordinate = new Coordinate(x, y);
+        Cell cell = data.get(coordinate);
         Marker marker = markers.get(tobj);
         marker.setPosition(x * CELL_SIZE, y * CELL_SIZE);
+        marker.coordinate = coordinate;
         if (cell != null) {
             cell.occupy(this);
 //            ui.showOpenedTile(cell);
@@ -66,6 +68,7 @@ public class Board extends Group {
             castles.put(tobj, ((Castle) marker));
         }
         marker.board = this;
+        marker.coordinate = coords;
         markers.put(tobj, marker);
         marker.setPosition(coords.x * CELL_SIZE, coords.y * CELL_SIZE);
         playerLayer.addActor(marker);

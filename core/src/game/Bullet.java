@@ -51,7 +51,7 @@ public class Bullet extends Group {
 
     private void hitMonster() {
         if (MathUtils.randomBoolean(stats.instantKillProbability)) {
-            monster.setHp(0);
+            monster.setHp(0, tower);
             Label label = new Label("Instant Kill!", Config.skin);
             label.setPosition(getX() - label.getWidth() / 2, getY() - label.getHeight() / 2);
             label.addAction(Actions.sequence(
@@ -61,8 +61,8 @@ public class Bullet extends Group {
             getParent().addActor(label);
             return;
         }
-        monster.setHp(monster.getHp() - stats.damage);
-        monster.addDot(stats);
+        monster.setHp(monster.getHp() - stats.damage, tower);
+        monster.addDot(stats, tower);
         monster.slow(stats, tower);
         if (MathUtils.randomBoolean(stats.chainProbability)) {
             Monster nearest = null;

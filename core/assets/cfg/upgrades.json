@@ -1,0 +1,8 @@
+{
+    "109": {
+        "2": [
+            [{"type":"add", "bulletStats": {"dotDamage": 4, "dotTime": 1}, "desc": "+4 to DOT damage, +1 to DOT time"}],
+            [{"type":"add", "bulletStats":{"damage": 2}, "desc": "+2 to damage"}, {"type":"multiply", "towerStats": {"speed":1.5}, "desc": "x1.5 shot speed"}]
+        ]
+    }
+}

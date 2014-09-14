@@ -2,30 +2,38 @@ package game.entities;
 
 import TUIO.TuioObject;
 import com.badlogic.gdx.utils.Array;
+import com.badlogic.gdx.utils.IntMap;
 import com.badlogic.gdx.utils.Pools;
-import game.Board;
-import game.Bullet;
-import game.Marker;
-import game.Monster;
+import game.*;
 import game.descriptions.entities.TowerDescription;
 import game.descriptions.entities.stats.BulletStats;
 import game.descriptions.entities.stats.TowerStats;
+import game.descriptions.entities.upgrades.TowerUpgrade;
+import game.ui.ExpBar;
+import game.ui.UpgradeView;
 
 /**
  * Created by Sagamor on 25/08/2014.
  */
-public class Tower extends Marker {
+public class Tower extends Marker implements HasExp {
 
     private final TowerDescription desc;
     private float cooldown = 0;
     public final TowerStats stats;
     public final BulletStats bulletStats;
+    private int exp;
 
     public Tower(TuioObject tobj, TowerDescription desc) {
         super(tobj);
         this.desc = desc;
         stats = new TowerStats(desc.towerStats);
         bulletStats = new BulletStats(desc.bulletStats);
+        ExpBar expBar = new ExpBar(this);
+        expBar.setWidth(Board.CELL_SIZE);
+        addActor(expBar);
+        expBar.setPosition(
+                Board.CELL_SIZE / 2 - expBar.getWidth() / 2, Board.CELL_SIZE - expBar.getHeight()
+        );
     }
 
     @Override
@@ -96,5 +104,63 @@ public class Tower extends Marker {
                 return res;
             }
         }
+    }
+
+    public void addExp(int exp) {
+        int prevLevel = getCurrentLevel();
+        this.exp += exp;
+        int currentLevel = getCurrentLevel();
+        if (currentLevel > prevLevel) {
+            //todo
+            IntMap<Array<Array<TowerUpgrade>>> towerUpgrades = Config.upgrades.get(tobj.getSymbolID());
+            System.out.println("LEVEL UP!");
+            if (towerUpgrades != null) {
+                Array<Array<TowerUpgrade>> currentLevelUpgrades = towerUpgrades.get(currentLevel);
+                if (currentLevelUpgrades != null) {
+                    int x = coordinate.x;
+                    int y = coordinate.y;
+                    addUpgrade(x - 1, y, 0, currentLevelUpgrades);
+                    addUpgrade(x + 1, y, 1, currentLevelUpgrades);
+                    addUpgrade(x, y - 1, 2, currentLevelUpgrades);
+                    addUpgrade(x, y + 1, 3, currentLevelUpgrades);
+                }
+            }
+        }
+    }
+
+    private void addUpgrade(int x, int y, int i, Array<Array<TowerUpgrade>> currentLevelUpgrades) {
+        if (x < 0 || x > board.width || y < 0 || y > board.height)
+            return;
+        Array<TowerUpgrade> cellUpgrades = currentLevelUpgrades.get(i % currentLevelUpgrades.size);
+        UpgradeView view = new UpgradeView(this, x,y,cellUpgrades);
+        board.addActor(view);
+    }
+
+    public int getExp() {
+        return exp;
+    }
+
+    public int getCurrentLevel() {
+        for (int i = desc.expsPerLevel.size - 1; i >= 0; i--) {
+            if (exp >= desc.expsPerLevel.get(i))
+                return i + 1;
+        }
+        return 0;
+    }
+
+    public int getExpForNextLevel(int level) {
+        if (level < 0) return 0;
+        if (level >= desc.expsPerLevel.size) return desc.expsPerLevel.peek();
+        return desc.expsPerLevel.get(level);
+
+    }
+
+    public float getLevelProgress() {
+        int level = getCurrentLevel();
+        int expForCurrentLevel = getExpForNextLevel(level - 1);
+        int expForNextLevel = getExpForNextLevel(level);
+        if (expForCurrentLevel == expForNextLevel)
+            return 1f;
+        return ((float) (exp - expForCurrentLevel)) / ((float) (expForNextLevel - expForCurrentLevel));
     }
 }

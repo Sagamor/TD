@@ -9,6 +9,7 @@ import com.badlogic.gdx.utils.IntMap;
 import com.badlogic.gdx.utils.ObjectMap;
 import game.descriptions.WaveDescription;
 import game.descriptions.entities.EntityDescription;
+import game.descriptions.entities.upgrades.TowerUpgrades;
 import game.descriptions.monsters.MonsterDescription;
 
 /**
@@ -22,6 +23,7 @@ public class Config {
     public static Array<WaveDescription> waveDescriptions;
     public static Game app;
     public static TuioClient tuio;
+    public static TowerUpgrades upgrades;
 //    public static ObjectMap<String, ParticleEffectPool> effects = new ObjectMap<String, ParticleEffectPool>();
 
 }

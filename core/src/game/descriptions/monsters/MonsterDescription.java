@@ -8,6 +8,7 @@ public class MonsterDescription {
     public float speed;
     public float damage;
     public String image;
+    public int exp = 1;
 
     @Override
     public String toString() {

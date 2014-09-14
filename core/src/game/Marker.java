@@ -27,6 +27,7 @@ public class Marker extends Group {
     }
 
     public Board board;
+    public Coordinate coordinate;
 
     public int getId() {
         return tobj.getSymbolID();
