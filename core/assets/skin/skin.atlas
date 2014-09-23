@@ -1,6 +1,6 @@
 
 skin.png
-size: 1020,497
+size: 2042,497
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
@@ -13,7 +13,7 @@ gui/button-down
   index: -1
 gui/button-up
   rotate: false
-  xy: 346, 95
+  xy: 748, 297
   size: 400, 200
   orig: 400, 200
   offset: 0, 0
@@ -27,21 +27,21 @@ monsters/boss
   index: -1
 monsters/normal
   rotate: false
-  xy: 748, 175
+  xy: 346, 231
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: -1
 monsters/swarm
   rotate: false
-  xy: 2, 19
+  xy: 1978, 433
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: -1
 objects/bullet
   rotate: false
-  xy: 1006, 482
+  xy: 1720, 224
   size: 14, 15
   orig: 14, 15
   offset: 0, 0
@@ -62,43 +62,57 @@ objects/castle
   index: -1
 objects/tower
   rotate: false
-  xy: 68, 85
+  xy: 2, 19
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: -1
 objects/tower_blue
   rotate: false
-  xy: 748, 109
+  xy: 68, 85
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: -1
 objects/tower_green
   rotate: false
-  xy: 814, 175
+  xy: 346, 165
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: -1
 objects/tower_red
   rotate: false
-  xy: 68, 19
+  xy: 412, 231
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: -1
 objects/tower_yellow
   rotate: false
-  xy: 134, 85
+  xy: 1978, 367
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: -1
 opensans
   rotate: false
-  xy: 748, 241
+  xy: 1720, 241
   size: 256, 256
   orig: 256, 256
+  offset: 0, 0
+  index: -1
+upgrades/damage
+  rotate: false
+  xy: 1150, 214
+  size: 283, 283
+  orig: 283, 283
+  offset: 0, 0
+  index: -1
+upgrades/dot_damage
+  rotate: false
+  xy: 1435, 214
+  size: 283, 283
+  orig: 283, 283
   offset: 0, 0
   index: -1
