@@ -1,6 +1,7 @@
 package game.descriptions.entities;
 
 import TUIO.TuioObject;
+import game.GameSettings;
 import game.Marker;
 import game.entities.Castle;
 
@@ -19,7 +20,7 @@ public class CastleDescription extends EntityDescription {
 
 
     @Override
-    public Marker createEntity(TuioObject tobj) {
-        return new Castle(tobj, this);
+    public Marker createEntity(TuioObject tobj, GameSettings settings) {
+        return new Castle(tobj, this, settings);
     }
 }

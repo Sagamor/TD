@@ -1,10 +1,7 @@
 package game.entities;
 
 import TUIO.TuioObject;
-import game.Board;
-import game.Config;
-import game.HasHp;
-import game.Marker;
+import game.*;
 import game.descriptions.entities.CastleDescription;
 import game.ui.HealthBar;
 import screens.LoseScreen;
@@ -15,12 +12,14 @@ import screens.LoseScreen;
 public class Castle extends Marker implements HasHp {
 
     private final CastleDescription castleDescription;
+    private final GameSettings settings;
     private final HealthBar bar;
     private float hp;
 
-    public Castle(TuioObject tobj, CastleDescription castleDescription) {
+    public Castle(TuioObject tobj, CastleDescription castleDescription, GameSettings settings) {
         super(tobj);
         this.castleDescription = castleDescription;
+        this.settings = settings;
         hp = castleDescription.hp;
         bar = new HealthBar(this);
         addActor(bar);
@@ -43,7 +42,7 @@ public class Castle extends Marker implements HasHp {
         this.hp = hp;
         System.out.println("castle hp: "+hp);
         if (hp <= 0) {
-            Config.app.setScreen(new LoseScreen());
+            Config.app.setScreen(new LoseScreen(settings));
         }
     }
 }

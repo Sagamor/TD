@@ -36,63 +36,24 @@ public class Marker extends Group {
 
     public Marker(TuioObject tobj) {
         this.tobj = tobj;
-
-        if (tobj.getSymbolID() == 116) {
-            Image castle = new Image();
-            castle.setDrawable(Config.skin, "objects/" + idToFileName.get(tobj.getSymbolID()));
-            castle.setSize(Board.CELL_SIZE * 1.7f, Board.CELL_SIZE * 1.7f);
-            castle.setPosition(Board.CELL_SIZE / 2f - castle.getWidth() / 2f, Board.CELL_SIZE / 2f - castle.getHeight() / 2f);
-            addActor(castle);
-        } else {
-            Image tower = new Image();
-            tower.setDrawable(Config.skin, "objects/tower_" + idToFileName.get(tobj.getSymbolID()));
-            tower.setSize(Board.CELL_SIZE / 2f, Board.CELL_SIZE / 2f);
-            tower.setPosition(Board.CELL_SIZE / 2f - tower.getWidth() / 2f, Board.CELL_SIZE / 2f - tower.getHeight() / 2f);
-
-            floating(tower);
-
-            addActor(tower);
+        Image image = createImage(tobj.getSymbolID());
+        if (tobj.getSymbolID() != 116) {
+            floating(image);
         }
+        addActor(image);
+    }
 
-
-//        CircleShapeActor chip = new CircleShapeActor();
-//        //chip.setPosition(Board.CELL_SIZE / 2f, Board.CELL_SIZE / 2f);
-//        chip.setSize(Board.CELL_SIZE / 3f, Board.CELL_SIZE / 3f);
-//        chip.setPosition(Board.CELL_SIZE / 2f - chip.getWidth() / 2f, Board.CELL_SIZE / 2f - chip.getHeight() / 2f);
-//        chip.setColor(getColor(idToFileName.get(tobj.getSymbolID())));
-//        addActor(chip);
-//
-//        final CircleShapeActor circle1 = createCircle();
-//        final CircleShapeActor circle2 = createCircle();
-//        final CircleShapeActor circle3 = createCircle();
-//
-//        circle1.addAction(Actions.sequence(
-//                Actions.delay(0),
-//                Actions.run(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        animate(circle1);
-//                    }
-//                })
-//        ));
-//        circle2.addAction(Actions.sequence(
-//                Actions.delay(0.7f),
-//                Actions.run(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        animate(circle2);
-//                    }
-//                })
-//        ));
-//        circle3.addAction(Actions.sequence(
-//                Actions.delay(1.5f),
-//                Actions.run(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        animate(circle3);
-//                    }
-//                })
-//        ));
+    public static Image createImage(int id) {
+        Image image;
+        if (id == 116) {
+            image = new Image(Config.skin, "objects/" + idToFileName.get(id));
+            image.setSize(Board.CELL_SIZE * 1.7f, Board.CELL_SIZE * 1.7f);
+        } else {
+            image = new Image(Config.skin, "objects/tower_" + idToFileName.get(id));
+            image.setSize(Board.CELL_SIZE / 2f, Board.CELL_SIZE / 2f);
+        }
+        image.setPosition(Board.CELL_SIZE / 2f - image.getWidth() / 2f, Board.CELL_SIZE / 2f - image.getHeight() / 2f);
+        return image;
     }
 
     public CircleShapeActor createCircle() {

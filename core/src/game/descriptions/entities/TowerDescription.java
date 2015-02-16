@@ -2,6 +2,7 @@ package game.descriptions.entities;
 
 import TUIO.TuioObject;
 import com.badlogic.gdx.utils.IntArray;
+import game.GameSettings;
 import game.Marker;
 import game.descriptions.entities.stats.BulletStats;
 import game.descriptions.entities.stats.TowerStats;
@@ -27,7 +28,7 @@ public class TowerDescription extends EntityDescription {
     }
 
     @Override
-    public Marker createEntity(TuioObject tobj) {
+    public Marker createEntity(TuioObject tobj, GameSettings settings) {
         return new Tower(tobj, this);
     }
 }

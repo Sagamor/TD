@@ -2,6 +2,7 @@ package screens;
 
 import TUIO.TuioClient;
 import game.Board;
+import game.GameSettings;
 import game.controllers.MarkerController;
 import game.controllers.UIController;
 import game.controllers.WaveController;
@@ -12,9 +13,11 @@ import game.controllers.WaveController;
 public class GameScreen extends StageScreen {
 
     private final TuioClient client;
+    private final GameSettings settings;
 
-    public GameScreen(TuioClient client) {
+    public GameScreen(TuioClient client, GameSettings settings) {
         this.client = client;
+        this.settings = settings;
     }
 
     @Override public void onShow() {
@@ -22,8 +25,8 @@ public class GameScreen extends StageScreen {
         Board board = new Board();
         board.bgColor = bgColor;
         UIController ui = new UIController(stage, board);
-        new WaveController(board);
-        MarkerController markers = new MarkerController(board, client);
+        new WaveController(board, settings);
+        MarkerController markers = new MarkerController(board, client, settings);
 
         client.addTuioListener(markers);
     }

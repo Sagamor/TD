@@ -5,10 +5,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.ObjectMap;
-import game.Board;
-import game.Config;
-import game.Coordinate;
-import game.Marker;
+import game.*;
 import screens.CalibrateScreen;
 
 /**
@@ -19,10 +16,12 @@ public class MarkerController implements TuioListener {
     public ObjectMap<Marker, Coordinate> playerCoords = new ObjectMap<Marker, Coordinate>();
 
     Board board;
+    private final GameSettings settings;
 //    IntSet ids = IntSet.with(109, 110, 115, 117, 116);
 
-    public MarkerController(Board board, TuioClient client) {
+    public MarkerController(Board board, TuioClient client, GameSettings settings) {
         this.board = board;
+        this.settings = settings;
         for(TuioObject obj : client.getTuioObjects()){
             addTuioObject(obj);
         }
@@ -34,7 +33,7 @@ public class MarkerController implements TuioListener {
             @Override
             public void run() {
             if (Config.entityDescriptions.containsKey(tobj.getSymbolID())){
-                Marker marker = Config.entityDescriptions.get(tobj.getSymbolID()).createEntity(tobj);
+                Marker marker = Config.entityDescriptions.get(tobj.getSymbolID()).createEntity(tobj, settings);
                 Coordinate coords = coordinateTransform(tobj);
                 board.addMarker(tobj, marker, coords);
                 board.move(coords.x, coords.y, tobj);

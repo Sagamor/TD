@@ -5,6 +5,7 @@ import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.ObjectMap;
 import game.Board;
 import game.Config;
+import game.GameSettings;
 import game.Monster;
 import game.descriptions.WaveDescription;
 import game.descriptions.monsters.MonsterDescription;
@@ -18,9 +19,9 @@ public class WaveController {
     private final Array<WaveDescription> waves;
     private WaveDescription wave;
 
-    public WaveController(Board board) {
+    public WaveController(Board board, GameSettings settings) {
         this.board = board;
-        this.waves = new Array<WaveDescription>();//todo use waves from game settings
+        this.waves = new Array<WaveDescription>(settings.waveDescriptions);
         nextWave();
     }
 
