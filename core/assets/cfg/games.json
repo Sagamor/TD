@@ -1,0 +1,71 @@
+{
+  "easy": {
+    "positions": {
+      "116": {"x": 1, "y": 2},
+      "109": {"x": 1, "y": 3},
+      "110": {"x": 1, "y": 3},
+      "115": {"x": 1, "y": 3},
+      "117": {"x": 1, "y": 3}
+    },
+    "waves": [
+      {
+        "monsters": {
+          "normal": {
+            "count": 10,
+            "frequency": 1
+          }
+        },
+        "cooldown": 5
+      },
+      {
+        "monsters": {
+          "swarm": {
+            "count": 30,
+            "frequency": 3
+          },
+          "boss": {
+            "count": 1,
+            "frequency": 1
+          }
+        },
+        "cooldown": 10
+      },
+      {
+        "monsters": {
+          "normal": {
+            "count": 10,
+            "frequency": 1
+          }
+        },
+        "cooldown": 5
+      },
+      {
+        "monsters": {
+          "swarm": {
+            "count": 30,
+            "frequency": 3
+          }
+        },
+        "cooldown": 5
+      },
+      {
+        "monsters": {
+          "normal": {
+            "count": 10,
+            "frequency": 1
+          }
+        },
+        "cooldown": 5
+      },
+      {
+        "monsters": {
+          "boss": {
+            "count": 3,
+            "frequency": 0.5
+          }
+        },
+        "cooldown": 5
+      }
+    ]
+  }
+}

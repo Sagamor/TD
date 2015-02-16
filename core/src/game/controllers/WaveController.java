@@ -1,6 +1,5 @@
 package game.controllers;
 
-import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.ObjectMap;
@@ -21,7 +20,7 @@ public class WaveController {
 
     public WaveController(Board board) {
         this.board = board;
-        this.waves = new Array<WaveDescription>(Config.waveDescriptions);
+        this.waves = new Array<WaveDescription>();//todo use waves from game settings
         nextWave();
     }
 

@@ -5,6 +5,8 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.utils.*;
 import game.Config;
+import game.GameSettings;
+import game.descriptions.Point;
 import game.descriptions.WaveDescription;
 import game.descriptions.entities.CastleDescription;
 import game.descriptions.entities.TowerDescription;
@@ -71,15 +73,23 @@ public class TowerDefence extends Game {
                 return ups;
             }
         });
+        cfgJson.setSerializer(GameSettings.class, new Json.ReadOnlySerializer<GameSettings>() {
+            @Override public GameSettings read(Json json, JsonValue jsonData, Class type) {
+                Array<WaveDescription> waves = json.readValue(Array.class, WaveDescription.class, jsonData.get("waves"));
+                ObjectMap<String, Point> rawPositions = json.readValue(ObjectMap.class, Point.class, jsonData.get("positions"));
+                IntMap<Point> positions = new IntMap<Point>();
+                for (ObjectMap.Entry<String, Point> e : rawPositions) {
+                    positions.put(Integer.parseInt(e.key), e.value);
+                }
+                return new GameSettings(positions, waves);
+            }
+        });
         Config.entityDescriptions = cfgJson.fromJson(IntMap.class, Gdx.files.internal("cfg/entities.json"));
         Config.monsterDescriptions = cfgJson.fromJson(ObjectMap.class, MonsterDescription.class, Gdx.files.internal("cfg/monsters.json"));
-        Config.waveDescriptions = new Array<WaveDescription>();
         Config.upgrades = cfgJson.fromJson(TowerUpgrades.class, Gdx.files.internal("cfg/upgrades.json"));
-        System.out.println(Config.upgrades);
+        Config.gameSettings = cfgJson.fromJson(OrderedMap.class, GameSettings.class, Gdx.files.internal("cfg/games.json"));
         Config.app = this;
-        for (JsonValue value : new JsonReader().parse(Gdx.files.internal("cfg/waves.json"))) {
-            Config.waveDescriptions.add(cfgJson.readValue(WaveDescription.class, value));
-        }
+        System.out.println("settings = "+Config.gameSettings);
         setScreen(new CalibrateScreen(this));
     }
 }

@@ -20,10 +20,9 @@ public class Config {
     public static Skin skin;
     public static IntMap<EntityDescription> entityDescriptions;
     public static ObjectMap<String, MonsterDescription> monsterDescriptions;
-    public static Array<WaveDescription> waveDescriptions;
+    public static ObjectMap<String, GameSettings> gameSettings;
     public static Game app;
     public static TuioClient tuio;
     public static TowerUpgrades upgrades;
-//    public static ObjectMap<String, ParticleEffectPool> effects = new ObjectMap<String, ParticleEffectPool>();
 
 }
