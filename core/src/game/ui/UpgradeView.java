@@ -16,12 +16,14 @@ public class UpgradeView extends Group {
     private final int x;
     private final int y;
     private final Array<TowerUpgrade> upgrades;
+    private final Array<UpgradeView> upgradeViews;
 
-    public UpgradeView(Tower tower, int x, int y, Array<TowerUpgrade> upgrades) {
+    public UpgradeView(Tower tower, int x, int y, Array<TowerUpgrade> upgrades, Array<UpgradeView> upgradeViews) {
         this.tower = tower;
         this.x = x;
         this.y = y;
         this.upgrades = upgrades;
+        this.upgradeViews = upgradeViews;
         setPosition(x * Board.CELL_SIZE, y * Board.CELL_SIZE);
         Label descLabel = new Label(upgrades.toString(), Config.skin);
         descLabel.setWrap(true);
@@ -34,8 +36,11 @@ public class UpgradeView extends Group {
         super.act(delta);
         if (tower.coordinate.x == x && tower.coordinate.y == y) {
             applyUpgrades();
-            remove();
+            for (UpgradeView upgradeView : upgradeViews) {
+                upgradeView.remove();
+            }
         }
+
     }
 
     private void applyUpgrades() {

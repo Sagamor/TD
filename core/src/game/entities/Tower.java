@@ -119,20 +119,22 @@ public class Tower extends Marker implements HasExp {
                 if (currentLevelUpgrades != null) {
                     int x = coordinate.x;
                     int y = coordinate.y;
-                    addUpgrade(x - 1, y, 0, currentLevelUpgrades);
-                    addUpgrade(x + 1, y, 1, currentLevelUpgrades);
-                    addUpgrade(x, y - 1, 2, currentLevelUpgrades);
-                    addUpgrade(x, y + 1, 3, currentLevelUpgrades);
+                    Array<UpgradeView> upgradeViews = new Array<UpgradeView>();
+                    addUpgrade(x - 1, y, 0, currentLevelUpgrades, upgradeViews);
+                    addUpgrade(x + 1, y, 1, currentLevelUpgrades, upgradeViews);
+                    addUpgrade(x, y - 1, 2, currentLevelUpgrades, upgradeViews);
+                    addUpgrade(x, y + 1, 3, currentLevelUpgrades, upgradeViews);
                 }
             }
         }
     }
 
-    private void addUpgrade(int x, int y, int i, Array<Array<TowerUpgrade>> currentLevelUpgrades) {
+    private void addUpgrade(int x, int y, int i, Array<Array<TowerUpgrade>> currentLevelUpgrades, Array<UpgradeView> upgradeViews) {
         if (x < 0 || x > board.width || y < 0 || y > board.height)
             return;
         Array<TowerUpgrade> cellUpgrades = currentLevelUpgrades.get(i % currentLevelUpgrades.size);
-        UpgradeView view = new UpgradeView(this, x,y,cellUpgrades);
+        UpgradeView view = new UpgradeView(this, x, y, cellUpgrades, upgradeViews);
+        upgradeViews.add(view);
         board.addActor(view);
     }
 
