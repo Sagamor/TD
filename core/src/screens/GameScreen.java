@@ -2,6 +2,7 @@ package screens;
 
 import TUIO.TuioClient;
 import game.Board;
+import game.Checker;
 import game.GameSettings;
 import game.controllers.MarkerController;
 import game.controllers.UIController;
@@ -25,7 +26,8 @@ public class GameScreen extends StageScreen {
         Board board = new Board();
         board.bgColor = bgColor;
         UIController ui = new UIController(stage, board);
-        new WaveController(board, settings);
+        new Checker(board, settings);
+//        new WaveController(board, settings);
         MarkerController markers = new MarkerController(board, client, settings);
 
         client.addTuioListener(markers);

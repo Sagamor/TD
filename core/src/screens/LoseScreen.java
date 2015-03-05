@@ -20,7 +20,7 @@ public class LoseScreen extends StageScreen {
 
     @Override
     protected void onShow() {
-        TextButton playAgain = new TextButton("Defeat!ukhotin9aa0 Play again?", Config.skin);
+        TextButton playAgain = new TextButton("Defeat! Play again?", Config.skin);
         Container<TextButton> container = new Container<TextButton>(playAgain);
         container.setFillParent(true);
         stage.addActor(container);

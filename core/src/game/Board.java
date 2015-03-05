@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.Group;
+import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.ObjectMap;
 import game.actors.BoardView;
@@ -58,6 +59,7 @@ public class Board extends Group {
             cell.occupy(this);
 //            ui.showOpenedTile(cell);
         }
+        fire(new ChangeListener.ChangeEvent());
     }
 
     public void addMarker(TuioObject tobj, Marker marker, Coordinate coords) {
@@ -72,6 +74,7 @@ public class Board extends Group {
         markers.put(tobj, marker);
         marker.setPosition(coords.x * CELL_SIZE, coords.y * CELL_SIZE);
         playerLayer.addActor(marker);
+        fire(new ChangeListener.ChangeEvent());
     }
 
     public void removeMarker(TuioObject tobj) {
@@ -85,6 +88,7 @@ public class Board extends Group {
                 towers.remove(tobj);
             }
         }
+        fire(new ChangeListener.ChangeEvent());
     }
 
     public void addMonster(Monster monster) {
