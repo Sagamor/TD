@@ -12,10 +12,10 @@
         "monsters": {
           "normal": {
             "count": 10,
-            "frequency": 1
+            "frequency": 0.75
           }
         },
-        "cooldown": 5
+        "cooldown": 10
       },
       {
         "monsters": {
@@ -44,20 +44,29 @@
       {
         "monsters": {
           "normal": {
-            "count": 10,
+            "count": 20,
             "frequency": 1
           }
         },
-        "cooldown": 5
+        "cooldown": 15
       },
       {
         "monsters": {
           "swarm": {
-            "count": 30,
-            "frequency": 3
+            "count": 20,
+            "frequency": 2
           },
           "boss": {
             "count": 1,
+            "frequency": 1
+          }
+        },
+        "cooldown": 15
+      },
+      {
+        "monsters": {
+          "normal": {
+            "count": 10,
             "frequency": 1
           }
         },
@@ -65,27 +74,18 @@
       },
       {
         "monsters": {
-          "normal": {
-            "count": 10,
-            "frequency": 1
-          }
-        },
-        "cooldown": 5
-      },
-      {
-        "monsters": {
           "swarm": {
-            "count": 30,
-            "frequency": 3
+            "count": 45,
+            "frequency": 2
           }
         },
-        "cooldown": 5
+        "cooldown": 10
       },
       {
         "monsters": {
           "normal": {
-            "count": 10,
-            "frequency": 1
+            "count": 15,
+            "frequency": 1.25
           }
         },
         "cooldown": 5
@@ -94,7 +94,7 @@
         "monsters": {
           "boss": {
             "count": 3,
-            "frequency": 0.5
+            "frequency": 1
           }
         },
         "cooldown": 5

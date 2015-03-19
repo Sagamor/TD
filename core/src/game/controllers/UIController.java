@@ -28,7 +28,7 @@ public class UIController {
     Label weatherLabel = new Label("Weather", Config.skin, "gray");
     Label eventLabel = new Label("Event", Config.skin, "gray");
     Label weatherValue = new Label("- weather -", Config.skin);
-    Label eventValue = new Label("- event -", Config.skin);;
+    Label eventValue = new Label("- event -", Config.skin);
     Label terrainLabel = new Label("Terrain", Config.skin, "gray");
     Label fieldLabel = new Label("Field", Config.skin, "gray");
     Label actionLabel = new Label("Action", Config.skin, "gray");

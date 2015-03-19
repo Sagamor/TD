@@ -27,7 +27,7 @@ public class UpgradeView extends Group {
         setPosition(x * Board.CELL_SIZE, y * Board.CELL_SIZE);
         Label descLabel = new Label(upgrades.toString(), Config.skin);
         descLabel.setWrap(true);
-        descLabel.setSize(Board.CELL_SIZE, Board.CELL_SIZE);
+        descLabel.setSize(Board.CELL_SIZE*0.75f, Board.CELL_SIZE*0.75f);
         addActor(descLabel);
     }
 

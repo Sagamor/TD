@@ -2,7 +2,6 @@ package com.sagamor.td.desktop;
 
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
-import com.badlogic.gdx.tools.texturepacker.TexturePacker;
 import com.sagamor.td.TowerDefence;
 
 public class DesktopLauncher {
@@ -15,8 +14,8 @@ public class DesktopLauncher {
         LwjglApplicationConfiguration configuration = new LwjglApplicationConfiguration();
         //configuration.useGL20 = true;
         configuration.title = "Tower Defence";
-        configuration.width = 1300;
-        configuration.height = 750;
+        configuration.width = 1800;
+        configuration.height = 1000;
         //configuration.fullscreen = true;
         new LwjglApplication(new TowerDefence(), configuration);
     }

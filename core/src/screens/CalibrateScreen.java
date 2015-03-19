@@ -25,8 +25,8 @@ public class CalibrateScreen extends StageScreen implements TuioListener {
     public static final float HEIGHT = 7;
 
     public static Vector2 bottomLeft = new Vector2(0,0);
-    public static Vector2 bottomRight = new Vector2(1,0);;
-    public static Vector2 topLeft = new Vector2(0,1);;
+    public static Vector2 bottomRight = new Vector2(1,0);
+    public static Vector2 topLeft = new Vector2(0,1);
 
     private Game main;
     private TuioClient client;
@@ -79,7 +79,7 @@ public class CalibrateScreen extends StageScreen implements TuioListener {
             image.moveBy(position.x * Board.CELL_SIZE, position.y * Board.CELL_SIZE);
             wrapper.addActor(image);
         }
-        wrapper.setScale(0.2f);
+        wrapper.setScale(0.5f);
 
         Group result = new Group();
         result.addActor(wrapper);

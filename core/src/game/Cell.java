@@ -2,7 +2,6 @@ package game;
 
 import game.actors.SquareShapeActor;
 import com.badlogic.gdx.scenes.scene2d.Group;
-import com.badlogic.gdx.scenes.scene2d.ui.Image;
 
 public class Cell extends Group {
     public boolean isEmpty;

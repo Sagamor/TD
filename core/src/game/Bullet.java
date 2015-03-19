@@ -25,6 +25,7 @@ public class Bullet extends Group {
         this.tower = tower;
         speed = new Vector2(0, stats.speed * Board.CELL_SIZE);
         Image image = new Image(Config.skin, "objects/bullet");
+        image.setColor(tower.getColor());
         image.setCenterPosition(0, 0);
         addActor(image);
     }

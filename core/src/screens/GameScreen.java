@@ -5,8 +5,6 @@ import game.Board;
 import game.Checker;
 import game.GameSettings;
 import game.controllers.MarkerController;
-import game.controllers.UIController;
-import game.controllers.WaveController;
 
 /**
  * Created by Sagamor on 11/03/2014.
@@ -25,9 +23,7 @@ public class GameScreen extends StageScreen {
 
         Board board = new Board();
         board.bgColor = bgColor;
-        UIController ui = new UIController(stage, board);
         new Checker(board, settings);
-//        new WaveController(board, settings);
         MarkerController markers = new MarkerController(board, client, settings);
 
         client.addTuioListener(markers);
