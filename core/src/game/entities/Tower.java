@@ -2,6 +2,7 @@ package game.entities;
 
 import TUIO.TuioObject;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.IntMap;
@@ -39,8 +40,8 @@ public class Tower extends Marker implements HasExp {
                 Board.CELL_SIZE / 2 - expBar.getWidth() / 2, Board.CELL_SIZE - expBar.getHeight()
         );
         radiusCircle.setShapeType(ShapeRenderer.ShapeType.Line);
+        radiusCircle.setLineWidth(2);
         radiusCircle.setColor(this.getColor(this.getTowerColorName()));
-        radiusCircle.setColor(Color.BLACK);
         addActor(radiusCircle);
     }
 
@@ -48,6 +49,12 @@ public class Tower extends Marker implements HasExp {
     public void act(float delta) {
         super.act(delta);
         cooldown -= delta;
+        radiusCircle.setSize(
+                desc.towerStats.radius * 2 * Board.CELL_SIZE, desc.towerStats.radius * 2 * Board.CELL_SIZE
+        );
+        radiusCircle.setPosition(
+                Board.CELL_SIZE / 2 - radiusCircle.getWidth() / 2, Board.CELL_SIZE / 2 - radiusCircle.getHeight() / 2
+        );
         if (cooldown <= 0) {
             //can fire
             Monster monster = findMonster();
@@ -56,8 +63,6 @@ public class Tower extends Marker implements HasExp {
         } else {
             //do nothing! lolz
         }
-        desc.towerStats.radius += 1;
-        radiusCircle.setSize(desc.towerStats.radius, desc.towerStats.radius);
     }
 
     private void fireBullet(Monster monster) {
