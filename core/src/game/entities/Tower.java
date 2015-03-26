@@ -40,7 +40,7 @@ public class Tower extends Marker implements HasExp {
                 Board.CELL_SIZE / 2 - expBar.getWidth() / 2, Board.CELL_SIZE - expBar.getHeight()
         );
         radiusCircle.setShapeType(ShapeRenderer.ShapeType.Line);
-        radiusCircle.setLineWidth(2);
+//        radiusCircle.setLineWidth(2);
         radiusCircle.setColor(this.getColor(this.getTowerColorName()));
         addActor(radiusCircle);
     }
