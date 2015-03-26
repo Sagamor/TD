@@ -1,6 +1,8 @@
 package game.entities;
 
 import TUIO.TuioObject;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.IntMap;
 import com.badlogic.gdx.utils.Pools;
@@ -23,7 +25,7 @@ public class Tower extends Marker implements HasExp {
     public final TowerStats stats;
     public final BulletStats bulletStats;
     private int exp;
-    private CircleShapeActor radiusCircle;
+    private CircleShapeActor radiusCircle = new CircleShapeActor();
 
     public Tower(TuioObject tobj, TowerDescription desc) {
         super(tobj);
@@ -36,6 +38,9 @@ public class Tower extends Marker implements HasExp {
         expBar.setPosition(
                 Board.CELL_SIZE / 2 - expBar.getWidth() / 2, Board.CELL_SIZE - expBar.getHeight()
         );
+        radiusCircle.setShapeType(ShapeRenderer.ShapeType.Line);
+        radiusCircle.setColor(this.getColor(this.getTowerColorName()));
+        radiusCircle.setColor(Color.BLACK);
         addActor(radiusCircle);
     }
 
@@ -51,6 +56,7 @@ public class Tower extends Marker implements HasExp {
         } else {
             //do nothing! lolz
         }
+        desc.towerStats.radius += 1;
         radiusCircle.setSize(desc.towerStats.radius, desc.towerStats.radius);
     }
 
