@@ -3,6 +3,7 @@ package game;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.Action;
 import com.badlogic.gdx.scenes.scene2d.Group;
+import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.actions.TemporalAction;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.utils.ObjectSet;
@@ -29,6 +30,8 @@ public class Monster extends Group implements HasHp {
         this.board = board;
         hp = desc.hp;
         speed = new Vector2(0, desc.speed * Board.CELL_SIZE);
+        this.getColor().a = 0;
+            addAction(Actions.alpha(1, 7f));
         Image image = new Image(Config.skin, desc.image);
         image.setCenterPosition(0, 0);
         image.setOrigin(image.getWidth() / 2, image.getHeight() / 2);
