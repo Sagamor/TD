@@ -11,6 +11,7 @@ public class AddUpgrade extends TowerUpgrade {
         if (towerStats != null) {
             tower.stats.radius += towerStats.radius;
             tower.stats.speed += towerStats.speed;
+            System.out.println("tower stats radius = " + tower.stats.radius);
         }
         if (bulletStats != null) {
 

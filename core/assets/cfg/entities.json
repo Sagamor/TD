@@ -6,7 +6,7 @@
     "109": {
         "type": "tower",
         "hp": 100,
-        "expsPerLevel": [0, 10, 30, 60, 100, 150],
+      "expsPerLevel": [0, 10, 30, 60, 100, 150, 250, 450, 700, 1050],
         "towerStats": {
             "speed": 1,
             "radius": 1.5
@@ -21,7 +21,7 @@
     "110": {
         "type": "tower",
         "hp": 100,
-        "expsPerLevel": [0, 10, 30, 60, 100, 150],
+        "expsPerLevel": [0, 10, 30, 60, 100, 150, 250, 450, 700, 1050],
         "towerStats": {
             "speed": 1,
             "radius": 1.5
@@ -36,7 +36,7 @@
     "115": {
         "type": "tower",
         "hp": 100,
-        "expsPerLevel": [0, 10, 30, 60, 100, 150],
+        "expsPerLevel": [0, 10, 30, 60, 100, 150, 250, 450, 700, 1050],
         "towerStats": {
             "speed": 1,
             "radius": 1.5
@@ -44,7 +44,7 @@
         "bulletStats": {
             "speed": 1,
             "damage": 2,
-            "chainProbability": 0.5,
+            "chainProbability": 0.4,
             "chainProbabilityMultiplier": 0.5,
             "chainDamageMultiplier": 0.5
         }
@@ -52,7 +52,7 @@
     "117": {
         "type": "tower",
         "hp": 100,
-        "expsPerLevel": [0, 10, 30, 60, 100, 150],
+        "expsPerLevel": [0, 10, 30, 60, 100, 150, 250, 450, 700, 1050],
         "towerStats": {
             "speed": 1,
             "radius": 1.5
@@ -60,7 +60,7 @@
         "bulletStats": {
             "speed": 1,
             "damage": 5,
-            "instantKillProbability": 0.5
+            "instantKillProbability": 0.3
         }
     }
 }

@@ -1,14 +1,14 @@
 {
-    "109": {
-        "2": [
-            [{"type":"add", "bulletStats": {"dotDamage": 6, "dotTime": 2}, "desc": "DoT"},
-              {"type":"add", "towerStats": {"radius": 0.75}, "desc": "Radius"}],
+  "109": {
+    "2": [
+      [{"type":"add", "bulletStats": {"dotDamage": 6, "dotTime": 2}, "desc": "DoT"},
+        {"type":"add", "towerStats": {"radius": 0.75}, "desc": "Radius"}],
 
-            [{"type":"add", "bulletStats":{"damage": 5}, "desc": "Damage"},
-              {"type":"multiply", "towerStats": {"speed": 2}, "desc": "Speed"},
-              {"type":"add", "towerStats": {"radius": 0.75}, "desc": "Radius"}]
-        ]
-    },
+      [{"type":"add", "bulletStats":{"damage": 5}, "desc": "Damage"},
+        {"type":"multiply", "towerStats": {"speed": 2}, "desc": "Speed"},
+        {"type":"add", "towerStats": {"radius": 0.75}, "desc": "Radius"}]
+    ]
+  },
   "110": {
     "2": [
       [{"type":"add", "bulletStats": {"slowTime": 6, "slowFactor": 2}, "desc": "Slow"},

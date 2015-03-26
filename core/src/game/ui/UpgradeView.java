@@ -46,6 +46,7 @@ public class UpgradeView extends Group {
     private void applyUpgrades() {
         for (TowerUpgrade upgrade : upgrades) {
             upgrade.apply(tower);
+            System.out.println("apply " + upgrade);
         }
     }
 }

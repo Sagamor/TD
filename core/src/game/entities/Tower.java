@@ -50,7 +50,7 @@ public class Tower extends Marker implements HasExp {
         super.act(delta);
         cooldown -= delta;
         radiusCircle.setSize(
-                desc.towerStats.radius * 2 * Board.CELL_SIZE, desc.towerStats.radius * 2 * Board.CELL_SIZE
+                stats.radius * 2 * Board.CELL_SIZE, stats.radius * 2 * Board.CELL_SIZE
         );
         radiusCircle.setPosition(
                 Board.CELL_SIZE / 2 - radiusCircle.getWidth() / 2, Board.CELL_SIZE / 2 - radiusCircle.getHeight() / 2
