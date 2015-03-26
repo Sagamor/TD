@@ -34,6 +34,6 @@ public class ExpBar extends Table {
         };
 
         add(label).row();
-        add(stripe).expandX().fillX().height(5);
+        add(stripe).expandX().fillX().height(8);
     }
 }

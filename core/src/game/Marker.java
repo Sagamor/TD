@@ -99,6 +99,10 @@ public class Marker extends Group {
         ));
     }
 
+    public String getTowerColorName() {
+        return idToFileName.get(getId());
+    }
+
     public Color getColor(String playerId) {
         if (playerId.equals("green")) {
             return Color.valueOf("90ec00");

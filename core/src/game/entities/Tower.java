@@ -5,6 +5,7 @@ import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.IntMap;
 import com.badlogic.gdx.utils.Pools;
 import game.*;
+import game.actors.CircleShapeActor;
 import game.descriptions.entities.TowerDescription;
 import game.descriptions.entities.stats.BulletStats;
 import game.descriptions.entities.stats.TowerStats;
@@ -22,6 +23,7 @@ public class Tower extends Marker implements HasExp {
     public final TowerStats stats;
     public final BulletStats bulletStats;
     private int exp;
+    private CircleShapeActor radiusCircle;
 
     public Tower(TuioObject tobj, TowerDescription desc) {
         super(tobj);
@@ -34,6 +36,7 @@ public class Tower extends Marker implements HasExp {
         expBar.setPosition(
                 Board.CELL_SIZE / 2 - expBar.getWidth() / 2, Board.CELL_SIZE - expBar.getHeight()
         );
+        addActor(radiusCircle);
     }
 
     @Override
@@ -48,6 +51,7 @@ public class Tower extends Marker implements HasExp {
         } else {
             //do nothing! lolz
         }
+        radiusCircle.setSize(desc.towerStats.radius, desc.towerStats.radius);
     }
 
     private void fireBullet(Monster monster) {
