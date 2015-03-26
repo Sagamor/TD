@@ -9,6 +9,7 @@ import com.badlogic.gdx.utils.IntMap;
 import com.badlogic.gdx.utils.Pools;
 import game.*;
 import game.actors.CircleShapeActor;
+import game.descriptions.UpgradeDescription;
 import game.descriptions.entities.TowerDescription;
 import game.descriptions.entities.stats.BulletStats;
 import game.descriptions.entities.stats.TowerStats;
@@ -127,10 +128,10 @@ public class Tower extends Marker implements HasExp {
         int currentLevel = getCurrentLevel();
         if (currentLevel > prevLevel) {
             //todo
-            IntMap<Array<Array<TowerUpgrade>>> towerUpgrades = Config.upgrades.get(tobj.getSymbolID());
+            IntMap<Array<UpgradeDescription>> towerUpgrades = Config.upgrades.get(tobj.getSymbolID());
             System.out.println("LEVEL UP!");
             if (towerUpgrades != null) {
-                Array<Array<TowerUpgrade>> currentLevelUpgrades = towerUpgrades.get(currentLevel);
+                Array<UpgradeDescription> currentLevelUpgrades = towerUpgrades.get(currentLevel);
                 if (currentLevelUpgrades != null) {
                     int x = coordinate.x;
                     int y = coordinate.y;
@@ -144,10 +145,10 @@ public class Tower extends Marker implements HasExp {
         }
     }
 
-    private void addUpgrade(int x, int y, int i, Array<Array<TowerUpgrade>> currentLevelUpgrades, Array<UpgradeView> upgradeViews) {
+    private void addUpgrade(int x, int y, int i, Array<UpgradeDescription> currentLevelUpgrades, Array<UpgradeView> upgradeViews) {
         if (x < 0 || x > board.width || y < 0 || y > board.height)
             return;
-        Array<TowerUpgrade> cellUpgrades = currentLevelUpgrades.get(i % currentLevelUpgrades.size);
+        UpgradeDescription cellUpgrades = currentLevelUpgrades.get(i % currentLevelUpgrades.size);
         UpgradeView view = new UpgradeView(this, x, y, cellUpgrades, upgradeViews);
         upgradeViews.add(view);
         board.addActor(view);

@@ -5,6 +5,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.utils.Array;
 import game.Board;
 import game.Config;
+import game.descriptions.UpgradeDescription;
 import game.descriptions.entities.upgrades.TowerUpgrade;
 import game.entities.Tower;
 
@@ -15,17 +16,17 @@ public class UpgradeView extends Group {
     private final Tower tower;
     private final int x;
     private final int y;
-    private final Array<TowerUpgrade> upgrades;
+    private final UpgradeDescription upgradeDescription;
     private final Array<UpgradeView> upgradeViews;
 
-    public UpgradeView(Tower tower, int x, int y, Array<TowerUpgrade> upgrades, Array<UpgradeView> upgradeViews) {
+    public UpgradeView(Tower tower, int x, int y, UpgradeDescription upgradeDescription, Array<UpgradeView> upgradeViews) {
         this.tower = tower;
         this.x = x;
         this.y = y;
-        this.upgrades = upgrades;
+        this.upgradeDescription = upgradeDescription;
         this.upgradeViews = upgradeViews;
         setPosition(x * Board.CELL_SIZE, y * Board.CELL_SIZE);
-        Label descLabel = new Label(upgrades.toString(), Config.skin);
+        Label descLabel = new Label(upgradeDescription.toString(), Config.skin);
         descLabel.setWrap(true);
         descLabel.setSize(Board.CELL_SIZE*0.75f, Board.CELL_SIZE*0.75f);
         addActor(descLabel);
@@ -44,7 +45,7 @@ public class UpgradeView extends Group {
     }
 
     private void applyUpgrades() {
-        for (TowerUpgrade upgrade : upgrades) {
+        for (TowerUpgrade upgrade : upgradeDescription.upgrades) {
             upgrade.apply(tower);
             System.out.println("apply " + upgrade);
         }

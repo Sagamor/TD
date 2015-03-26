@@ -1,43 +1,64 @@
 {
   "109": {
     "2": [
-      [{"type":"add", "bulletStats": {"dotDamage": 6, "dotTime": 2}, "desc": "DoT"},
-        {"type":"add", "towerStats": {"radius": 0.75}, "desc": "Radius"}],
-
-      [{"type":"add", "bulletStats":{"damage": 5}, "desc": "Damage"},
-        {"type":"multiply", "towerStats": {"speed": 2}, "desc": "Speed"},
-        {"type":"add", "towerStats": {"radius": 0.75}, "desc": "Radius"}]
+      {
+        "icon": "some-image",
+        "upgrades":[{"type":"add", "bulletStats": {"dotDamage": 6, "dotTime": 2}},
+          {"type":"add", "towerStats": {"radius": 0.75}}]
+      },
+      {
+        "icon": "some-image",
+        "upgrades":[{"type":"add", "bulletStats":{"damage": 5}},
+          {"type":"multiply", "towerStats": {"speed": 2}},
+          {"type":"add", "towerStats": {"radius": 0.75}}]
+      }
     ]
   },
   "110": {
     "2": [
-      [{"type":"add", "bulletStats": {"slowTime": 6, "slowFactor": 2}, "desc": "Slow"},
-        {"type":"add", "towerStats": {"radius": 0.75}, "desc": "Radius"}],
-
-      [{"type":"add", "bulletStats":{"damage": 5}, "desc": "Damage"},
-        {"type":"multiply", "towerStats": {"speed": 2}, "desc": "Speed"},
-        {"type":"add", "towerStats": {"radius": 0.75}, "desc": "Radius"}]
+      {
+        "icon": "some-image",
+        "upgrades":[{"type":"add", "bulletStats": {"slowTime": 6, "slowFactor": 2}},
+          {"type":"add", "towerStats": {"radius": 0.75}}]
+      },
+      {
+        "icon": "some-image",
+        "upgrades":[{"type":"add", "bulletStats":{"damage": 5}},
+          {"type":"multiply", "towerStats": {"speed": 2}},
+          {"type":"add", "towerStats": {"radius": 0.75}}]
+      }
     ]
   },
   "115": {
     "2": [
-      [{"type":"add", "bulletStats": {"chainProbability": 1.5, "chainProbabilityMultiplier": 1.25, "chainDamageMultiplier": 0.75}, "desc": "DoT"},
-        {"type":"add", "towerStats": {"radius": 0.75}, "desc": "Radius"}],
-
-      [{"type":"add", "bulletStats":{"damage": 5}, "desc": "Damage"},
-        {"type":"multiply", "towerStats": {"speed": 2}, "desc": "Speed"},
-        {"type":"add", "towerStats": {"radius": 0.75}, "desc": "Radius"}]
+      {
+        "icon": "some-image",
+        "upgrades":[{"type":"add", "bulletStats": {"chainProbability": 1.5, "chainProbabilityMultiplier": 1.25, "chainDamageMultiplier": 0.75}},
+          {"type":"add", "towerStats": {"radius": 0.75}}]
+      },
+      {
+        "icon": "some-image",
+        "upgrades":[{"type":"add", "bulletStats":{"damage": 5}},
+          {"type":"multiply", "towerStats": {"speed": 2}},
+          {"type":"add", "towerStats": {"radius": 0.75}}]
+      }
+      
     ]
   },
   "117": {
     "2": [
-      [{"type":"multiply", "bulletStats": {"instantKillProbability": 1.5}, "desc": "IK"},
-        {"type":"add", "bulletStats":{"damage": 3}, "desc": "Damage"},
-        {"type":"add", "towerStats": {"radius": 0.75}, "desc": "Radius"}],
-
-      [{"type":"add", "bulletStats":{"damage": 5}, "desc": "Damage"},
-        {"type":"multiply", "towerStats": {"speed": 2}, "desc": "Speed"},
-        {"type":"add", "towerStats": {"radius": 0.75}, "desc": "Radius"}]
+      {
+        "icon": "some-image",
+        "upgrades":[{"type":"multiply", "bulletStats": {"instantKillProbability": 1.5}},
+          {"type":"add", "bulletStats":{"damage": 3}},
+          {"type":"add", "towerStats": {"radius": 0.75}}]
+      },
+      {
+        "icon": "some-image",
+        "upgrades":[{"type":"add", "bulletStats":{"damage": 5}},
+          {"type":"multiply", "towerStats": {"speed": 2}},
+          {"type":"add", "towerStats": {"radius": 0.75}}]
+      }
     ]
   }
 }

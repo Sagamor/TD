@@ -7,6 +7,7 @@ import com.badlogic.gdx.utils.*;
 import game.Config;
 import game.GameSettings;
 import game.descriptions.Point;
+import game.descriptions.UpgradeDescription;
 import game.descriptions.WaveDescription;
 import game.descriptions.entities.CastleDescription;
 import game.descriptions.entities.TowerDescription;
@@ -55,15 +56,11 @@ public class TowerDefence extends Game {
             public TowerUpgrades read(Json json, JsonValue jsonData, Class type) {
                 TowerUpgrades ups = new TowerUpgrades();
                 for (JsonValue out : jsonData) {
-                    IntMap<Array<Array<TowerUpgrade>>> fuuuu = new IntMap();
+                    IntMap<Array<UpgradeDescription>> fuuuu = new IntMap();
                     for (JsonValue value : out) {
-                        Array<Array<TowerUpgrade>> list = new Array<Array<TowerUpgrade>>();
+                        Array<UpgradeDescription> list = new Array<UpgradeDescription>();
                         for (JsonValue v : value) {
-                            Array<TowerUpgrade> pack = new Array<TowerUpgrade>();
-                            for (JsonValue rawUp : v) {
-                                pack.add(((TowerUpgrade) json.readValue(null, rawUp)));
-                            }
-                            list.add(pack);
+                            list.add(json.readValue(UpgradeDescription.class, v));
                         }
                         fuuuu.put(Integer.parseInt(value.name), list);
                     }

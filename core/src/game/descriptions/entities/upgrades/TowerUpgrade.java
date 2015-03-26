@@ -10,12 +10,6 @@ import game.entities.Tower;
 public abstract class TowerUpgrade {
     TowerStats towerStats;
     BulletStats bulletStats;
-    public String desc;
 
     public abstract void apply(Tower tower);
-
-    @Override
-    public String toString() {
-        return desc;
-    }
 }
