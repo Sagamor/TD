@@ -2,45 +2,45 @@
   "109": {
     "2": [
       {
-        "icon": "some-image",
+        "icon": "dot",
         "upgrades":[{"type":"add", "bulletStats": {"dotDamage": 6, "dotTime": 2}},
           {"type":"add", "towerStats": {"radius": 0.75}}]
       },
       {
-        "icon": "some-image",
+        "icon": "gen",
         "upgrades":[{"type":"add", "bulletStats":{"damage": 5}},
           {"type":"multiply", "towerStats": {"speed": 2}},
-          {"type":"add", "towerStats": {"radius": 0.75}}]
+          {"type":"add", "towerStats": {"radius": 0.7}}]
       }
     ]
   },
   "110": {
     "2": [
       {
-        "icon": "some-image",
+        "icon": "slow",
         "upgrades":[{"type":"add", "bulletStats": {"slowTime": 6, "slowFactor": 2}},
           {"type":"add", "towerStats": {"radius": 0.75}}]
       },
       {
-        "icon": "some-image",
+        "icon": "gen",
         "upgrades":[{"type":"add", "bulletStats":{"damage": 5}},
           {"type":"multiply", "towerStats": {"speed": 2}},
-          {"type":"add", "towerStats": {"radius": 0.75}}]
+          {"type":"add", "towerStats": {"radius": 0.7}}]
       }
     ]
   },
   "115": {
     "2": [
       {
-        "icon": "some-image",
+        "icon": "chain",
         "upgrades":[{"type":"add", "bulletStats": {"chainProbability": 1.5, "chainProbabilityMultiplier": 1.25, "chainDamageMultiplier": 0.75}},
           {"type":"add", "towerStats": {"radius": 0.75}}]
       },
       {
-        "icon": "some-image",
+        "icon": "gen",
         "upgrades":[{"type":"add", "bulletStats":{"damage": 5}},
           {"type":"multiply", "towerStats": {"speed": 2}},
-          {"type":"add", "towerStats": {"radius": 0.75}}]
+          {"type":"add", "towerStats": {"radius": 0.7}}]
       }
       
     ]
@@ -48,16 +48,16 @@
   "117": {
     "2": [
       {
-        "icon": "some-image",
+        "icon": "kill",
         "upgrades":[{"type":"multiply", "bulletStats": {"instantKillProbability": 1.5}},
           {"type":"add", "bulletStats":{"damage": 3}},
           {"type":"add", "towerStats": {"radius": 0.75}}]
       },
       {
-        "icon": "some-image",
+        "icon": "gen",
         "upgrades":[{"type":"add", "bulletStats":{"damage": 5}},
           {"type":"multiply", "towerStats": {"speed": 2}},
-          {"type":"add", "towerStats": {"radius": 0.75}}]
+          {"type":"add", "towerStats": {"radius": 0.7}}]
       }
     ]
   }

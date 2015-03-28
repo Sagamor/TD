@@ -1,47 +1,47 @@
 
 skin.png
-size: 2042,497
+size: 2042,468
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
 gui/button-down
   rotate: false
-  xy: 346, 297
+  xy: 346, 268
   size: 400, 200
   orig: 400, 200
   offset: 0, 0
   index: -1
 gui/button-up
   rotate: false
-  xy: 748, 297
+  xy: 748, 268
   size: 400, 200
   orig: 400, 200
   offset: 0, 0
   index: -1
 monsters/boss
   rotate: false
-  xy: 2, 85
+  xy: 1978, 404
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: -1
 monsters/normal
   rotate: false
-  xy: 346, 231
+  xy: 208, 56
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: -1
 monsters/swarm
   rotate: false
-  xy: 1978, 433
+  xy: 552, 202
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: -1
 objects/bullet
   rotate: false
-  xy: 1720, 224
+  xy: 1720, 195
   size: 14, 15
   orig: 14, 15
   offset: 0, 0
@@ -55,63 +55,63 @@ objects/bullet_c
   index: -1
 objects/castle
   rotate: false
-  xy: 2, 151
+  xy: 2, 122
   size: 342, 346
   orig: 342, 346
   offset: 0, 0
   index: -1
 objects/tower
   rotate: false
-  xy: 2, 19
+  xy: 1978, 338
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: -1
 objects/tower_blue
   rotate: false
-  xy: 68, 85
-  size: 64, 64
-  orig: 64, 64
+  xy: 2, 19
+  size: 101, 101
+  orig: 101, 101
   offset: 0, 0
   index: -1
 objects/tower_green
   rotate: false
   xy: 346, 165
-  size: 64, 64
-  orig: 64, 64
+  size: 101, 101
+  orig: 101, 101
   offset: 0, 0
   index: -1
 objects/tower_red
   rotate: false
-  xy: 412, 231
-  size: 64, 64
-  orig: 64, 64
+  xy: 105, 19
+  size: 101, 101
+  orig: 101, 101
   offset: 0, 0
   index: -1
 objects/tower_yellow
   rotate: false
-  xy: 1978, 367
-  size: 64, 64
-  orig: 64, 64
+  xy: 449, 165
+  size: 101, 101
+  orig: 101, 101
   offset: 0, 0
   index: -1
 opensans
   rotate: false
-  xy: 1720, 241
+  xy: 1720, 212
   size: 256, 256
   orig: 256, 256
   offset: 0, 0
   index: -1
 upgrades/damage
   rotate: false
-  xy: 1150, 214
+  xy: 1150, 185
   size: 283, 283
   orig: 283, 283
   offset: 0, 0
   index: -1
 upgrades/dot_damage
   rotate: false
-  xy: 1435, 214
+  xy: 1435, 185
   size: 283, 283
   orig: 283, 283
   offset: 0, 0

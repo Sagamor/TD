@@ -1,8 +1,11 @@
 package game.ui;
 
 import com.badlogic.gdx.scenes.scene2d.Group;
+import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.scenes.scene2d.utils.Align;
 import com.badlogic.gdx.utils.Array;
+import com.badlogic.gdx.utils.Scaling;
 import game.Board;
 import game.Config;
 import game.descriptions.UpgradeDescription;
@@ -26,9 +29,16 @@ public class UpgradeView extends Group {
         this.upgradeDescription = upgradeDescription;
         this.upgradeViews = upgradeViews;
         setPosition(x * Board.CELL_SIZE, y * Board.CELL_SIZE);
-        Label descLabel = new Label(upgradeDescription.toString(), Config.skin);
+
+//        Image image = new Image(Config.skin, upgradeDescription.icon);
+//        image.setSize(Board.CELL_SIZE, Board.CELL_SIZE);
+//        image.setScaling(Scaling.none);
+//        image.setAlign(Align.center);
+
+        Label descLabel = new Label(upgradeDescription.icon, Config.skin);
         descLabel.setWrap(true);
-        descLabel.setSize(Board.CELL_SIZE*0.75f, Board.CELL_SIZE*0.75f);
+        descLabel.setSize(Board.CELL_SIZE, Board.CELL_SIZE);
+        descLabel.setAlignment(Align.center);
         addActor(descLabel);
     }
 
