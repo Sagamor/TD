@@ -1,6 +1,8 @@
 package game.controllers;
 
+import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
+import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.ObjectMap;
 import game.Board;
@@ -10,23 +12,30 @@ import game.Monster;
 import game.descriptions.WaveDescription;
 import game.descriptions.monsters.MonsterDescription;
 import game.descriptions.waves.WaveParams;
+import screens.LoseScreen;
+import screens.WinScreen;
 
 /**
  * Created by Sagamor on 11/09/2014.
  */
 public class WaveController {
     private final Board board;
+    private final GameSettings settings;
     private final Array<WaveDescription> waves;
     private WaveDescription wave;
 
     public WaveController(Board board, GameSettings settings) {
         this.board = board;
+        this.settings = settings;
         this.waves = new Array<WaveDescription>(settings.waveDescriptions);
         nextWave();
     }
 
     private void nextWave() {
-        if (waves.size == 0) return;
+        if (waves.size == 0) {
+            waitAllMonstersDie();
+            return;
+        }
         wave = waves.removeIndex(0);
 
         float cooldown = wave.cooldown + calcMaxWaveTime(wave.monsters.values());
@@ -53,6 +62,22 @@ public class WaveController {
                 }
             })));
         }
+    }
+
+    private void waitAllMonstersDie() {
+        board.addListener(new ChangeListener() {
+            @Override
+            public void changed(ChangeEvent event, Actor actor) {
+                if (board.monsters.size != 0)
+                    return;
+                board.removeListener(this);
+                win();
+            }
+        });
+    }
+
+    private void win() {
+        Config.app.setScreen(new WinScreen(settings));
     }
 
     private void spawnMonster(MonsterDescription desc) {

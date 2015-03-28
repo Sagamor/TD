@@ -100,10 +100,12 @@ public class Board extends Group {
         Vector2 pos = new Vector2(0, distance).rotate(angle).add(cx, cy);
         monster.setPosition(pos.x, pos.y);
         monsters.add(monster);
+        fire(new ChangeListener.ChangeEvent());
     }
 
     public void removeMonster(Monster monster) {
         monster.remove();
         monsters.removeValue(monster, true);
+        fire(new ChangeListener.ChangeEvent());
     }
 }
