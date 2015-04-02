@@ -4,6 +4,7 @@ import TUIO.TuioObject;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.IntMap;
 import com.badlogic.gdx.utils.ObjectSet;
@@ -23,6 +24,9 @@ import game.ui.UpgradeView;
  */
 public class Tower extends Marker implements HasExp {
 
+    private static final float PUNISH_TIME = 1f;
+    private static final float PUNISH_RADIUS = 0.5f;
+
     private final TowerDescription desc;
     private float cooldown = 0;
     public final TowerStats stats;
@@ -30,6 +34,8 @@ public class Tower extends Marker implements HasExp {
     public final ObjectSet<Coordinate> availableCoordinates = new ObjectSet<Coordinate>();
     private int exp;
     private CircleShapeActor radiusCircle = new CircleShapeActor();
+    // 0f = maximum punishing, 1f = no punishing at all
+    private float punishingFactor = 1f;
 
     public Tower(TuioObject tobj, TowerDescription desc) {
         super(tobj);
@@ -48,12 +54,21 @@ public class Tower extends Marker implements HasExp {
         addActor(radiusCircle);
     }
 
+    private float shotRadius() {
+        // 0f = maximum punishing, 1f = no punishing at all
+        return Interpolation.linear.apply(PUNISH_RADIUS, stats.radius, punishingFactor);
+    }
+
     @Override
     public void act(float delta) {
         super.act(delta);
+        punishingFactor += delta / PUNISH_TIME;
+        if (punishingFactor > 1f) {
+            punishingFactor = 1f;
+        }
         cooldown -= delta;
         radiusCircle.setSize(
-                stats.radius * 2 * Board.CELL_SIZE, stats.radius * 2 * Board.CELL_SIZE
+                shotRadius() * 2 * Board.CELL_SIZE, shotRadius() * 2 * Board.CELL_SIZE
         );
         radiusCircle.setPosition(
                 Board.CELL_SIZE / 2 - radiusCircle.getWidth() / 2, Board.CELL_SIZE / 2 - radiusCircle.getHeight() / 2
@@ -82,7 +97,7 @@ public class Tower extends Marker implements HasExp {
     @SuppressWarnings("unchecked")
     private Monster findMonster() {
         Array<Monster> monsters = Pools.obtain(Array.class);
-        float dst2 = stats.radius * stats.radius * Board.CELL_SIZE * Board.CELL_SIZE;
+        float dst2 = shotRadius() * shotRadius() * Board.CELL_SIZE * Board.CELL_SIZE;
         for (Monster monster : board.monsters) {
             float dx = monster.getX() - (getX() + Board.CELL_SIZE / 2);
             float dy = monster.getY() - (getY() + Board.CELL_SIZE / 2);
@@ -157,7 +172,7 @@ public class Tower extends Marker implements HasExp {
     }
 
     private void punishForIllegalMove() {
-
+        punishingFactor = 0f;
     }
 
     private void addUpgrade(int x, int y, int i, Array<UpgradeDescription> currentLevelUpgrades, Array<UpgradeView> upgradeViews) {
