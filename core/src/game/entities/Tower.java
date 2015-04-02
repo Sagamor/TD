@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.IntMap;
+import com.badlogic.gdx.utils.ObjectSet;
 import com.badlogic.gdx.utils.Pools;
 import game.*;
 import game.actors.CircleShapeActor;
@@ -26,6 +27,7 @@ public class Tower extends Marker implements HasExp {
     private float cooldown = 0;
     public final TowerStats stats;
     public final BulletStats bulletStats;
+    public final ObjectSet<Coordinate> availableCoordinates = new ObjectSet<Coordinate>();
     private int exp;
     private CircleShapeActor radiusCircle = new CircleShapeActor();
 
@@ -145,11 +147,26 @@ public class Tower extends Marker implements HasExp {
         }
     }
 
+    @Override
+    protected void positionChanged() {
+        if (getStage() == null)
+            return;
+        if (!availableCoordinates.contains(coordinate)) {
+            punishForIllegalMove();
+        }
+    }
+
+    private void punishForIllegalMove() {
+
+    }
+
     private void addUpgrade(int x, int y, int i, Array<UpgradeDescription> currentLevelUpgrades, Array<UpgradeView> upgradeViews) {
         if (x < 0 || x > board.width || y < 0 || y > board.height)
             return;
+        Coordinate coordinate = new Coordinate(x, y);
+        availableCoordinates.add(coordinate);
         UpgradeDescription cellUpgrades = currentLevelUpgrades.get(i % currentLevelUpgrades.size);
-        UpgradeView view = new UpgradeView(this, x, y, cellUpgrades, upgradeViews);
+        UpgradeView view = new UpgradeView(this, coordinate, cellUpgrades, upgradeViews);
         upgradeViews.add(view);
         board.addActor(view);
     }

@@ -53,8 +53,8 @@ public class Board extends Group {
         Coordinate coordinate = new Coordinate(x, y);
         Cell cell = data.get(coordinate);
         Marker marker = markers.get(tobj);
-        marker.setPosition(x * CELL_SIZE, y * CELL_SIZE);
         marker.coordinate = coordinate;
+        marker.setPosition(x * CELL_SIZE, y * CELL_SIZE);
         if (cell != null) {
             cell.occupy(this);
 //            ui.showOpenedTile(cell);

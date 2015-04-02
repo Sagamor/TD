@@ -8,6 +8,7 @@ import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Scaling;
 import game.Board;
 import game.Config;
+import game.Coordinate;
 import game.descriptions.UpgradeDescription;
 import game.descriptions.entities.upgrades.TowerUpgrade;
 import game.entities.Tower;
@@ -17,18 +18,16 @@ import game.entities.Tower;
  */
 public class UpgradeView extends Group {
     private final Tower tower;
-    private final int x;
-    private final int y;
+    private final Coordinate coordinate;
     private final UpgradeDescription upgradeDescription;
     private final Array<UpgradeView> upgradeViews;
 
-    public UpgradeView(Tower tower, int x, int y, UpgradeDescription upgradeDescription, Array<UpgradeView> upgradeViews) {
+    public UpgradeView(Tower tower, Coordinate coordinate, UpgradeDescription upgradeDescription, Array<UpgradeView> upgradeViews) {
         this.tower = tower;
-        this.x = x;
-        this.y = y;
+        this.coordinate = coordinate;
         this.upgradeDescription = upgradeDescription;
         this.upgradeViews = upgradeViews;
-        setPosition(x * Board.CELL_SIZE, y * Board.CELL_SIZE);
+        setPosition(coordinate.x * Board.CELL_SIZE, coordinate.y * Board.CELL_SIZE);
 
 //        Image image = new Image(Config.skin, upgradeDescription.icon);
 //        image.setSize(Board.CELL_SIZE, Board.CELL_SIZE);
@@ -45,10 +44,11 @@ public class UpgradeView extends Group {
     @Override
     public void act(float delta) {
         super.act(delta);
-        if (tower.coordinate.x == x && tower.coordinate.y == y) {
+        if (tower.coordinate.x == coordinate.x && tower.coordinate.y == coordinate.y) {
             applyUpgrades();
             for (UpgradeView upgradeView : upgradeViews) {
                 upgradeView.remove();
+                tower.availableCoordinates.remove(coordinate);
             }
         }
 
