@@ -7,6 +7,7 @@ import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.IntMap;
 import game.controllers.WaveController;
 import game.descriptions.Point;
+import game.entities.Tower;
 
 /**
  * Created by Администратор on 05.03.2015.
@@ -43,6 +44,9 @@ public class Checker {
     }
 
     private void Start() {
+        for (Tower tower : board.towers.values()) {
+            tower.punishingEnabled = true;
+        }
         board.removeListener(listener);
         for (Image image : images) {
             image.remove();

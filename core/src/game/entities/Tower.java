@@ -36,6 +36,7 @@ public class Tower extends Marker implements HasExp {
     private CircleShapeActor radiusCircle = new CircleShapeActor();
     // 0f = maximum punishing, 1f = no punishing at all
     private float punishingFactor = 1f;
+    public boolean punishingEnabled = false;
 
     public Tower(TuioObject tobj, TowerDescription desc) {
         super(tobj);
@@ -164,7 +165,7 @@ public class Tower extends Marker implements HasExp {
 
     @Override
     protected void positionChanged() {
-        if (getStage() == null)
+        if (getStage() == null || !punishingEnabled)
             return;
         if (!availableCoordinates.contains(coordinate)) {
             punishForIllegalMove();
