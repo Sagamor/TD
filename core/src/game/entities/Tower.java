@@ -24,8 +24,8 @@ import game.ui.UpgradeView;
  */
 public class Tower extends Marker implements HasExp {
 
-    private static final float PUNISH_TIME = 1f;
-    private static final float PUNISH_RADIUS = 0.5f;
+    private static final float PUNISH_TIME = 10f;
+    private static final float PUNISH_RADIUS = 0.25f;
 
     private final TowerDescription desc;
     private float cooldown = 0;

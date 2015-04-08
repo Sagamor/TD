@@ -1,118 +1,132 @@
 
 skin.png
-size: 2042,468
+size: 1008,507
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
 gui/button-down
   rotate: false
-  xy: 346, 268
+  xy: 2, 307
   size: 400, 200
   orig: 400, 200
   offset: 0, 0
   index: -1
 gui/button-up
   rotate: false
-  xy: 748, 268
+  xy: 2, 105
   size: 400, 200
   orig: 400, 200
   offset: 0, 0
   index: -1
 monsters/boss
   rotate: false
-  xy: 1978, 404
+  xy: 944, 443
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: -1
 monsters/normal
   rotate: false
-  xy: 208, 56
+  xy: 620, 57
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: -1
 monsters/swarm
   rotate: false
-  xy: 552, 202
+  xy: 944, 377
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: -1
 objects/bullet
   rotate: false
-  xy: 1720, 195
-  size: 14, 15
-  orig: 14, 15
+  xy: 686, 229
+  size: 20, 20
+  orig: 20, 20
   offset: 0, 0
   index: -1
 objects/bullet_c
   rotate: false
-  xy: 2, 2
+  xy: 414, 3
   size: 14, 15
   orig: 14, 15
   offset: 0, 0
   index: -1
 objects/castle
   rotate: false
-  xy: 2, 122
-  size: 342, 346
-  orig: 342, 346
-  offset: 0, 0
-  index: -1
-objects/tower
-  rotate: false
-  xy: 1978, 338
-  size: 64, 64
-  orig: 64, 64
+  xy: 404, 226
+  size: 280, 281
+  orig: 280, 281
   offset: 0, 0
   index: -1
 objects/tower_blue
   rotate: false
-  xy: 2, 19
+  xy: 311, 2
   size: 101, 101
   orig: 101, 101
   offset: 0, 0
   index: -1
 objects/tower_green
   rotate: false
-  xy: 346, 165
+  xy: 414, 20
   size: 101, 101
   orig: 101, 101
   offset: 0, 0
   index: -1
 objects/tower_red
   rotate: false
-  xy: 105, 19
+  xy: 517, 20
   size: 101, 101
   orig: 101, 101
   offset: 0, 0
   index: -1
 objects/tower_yellow
   rotate: false
-  xy: 449, 165
+  xy: 610, 123
   size: 101, 101
   orig: 101, 101
   offset: 0, 0
   index: -1
 opensans
   rotate: false
-  xy: 1720, 212
+  xy: 686, 251
   size: 256, 256
   orig: 256, 256
   offset: 0, 0
   index: -1
-upgrades/damage
+upgrades/chain
   rotate: false
-  xy: 1150, 185
-  size: 283, 283
-  orig: 283, 283
+  xy: 2, 2
+  size: 101, 101
+  orig: 101, 101
   offset: 0, 0
   index: -1
-upgrades/dot_damage
+upgrades/dot
   rotate: false
-  xy: 1435, 185
-  size: 283, 283
-  orig: 283, 283
+  xy: 404, 123
+  size: 101, 101
+  orig: 101, 101
+  offset: 0, 0
+  index: -1
+upgrades/gen
+  rotate: false
+  xy: 105, 2
+  size: 101, 101
+  orig: 101, 101
+  offset: 0, 0
+  index: -1
+upgrades/kill
+  rotate: false
+  xy: 507, 123
+  size: 101, 101
+  orig: 101, 101
+  offset: 0, 0
+  index: -1
+upgrades/slow
+  rotate: false
+  xy: 208, 2
+  size: 101, 101
+  orig: 101, 101
   offset: 0, 0
   index: -1

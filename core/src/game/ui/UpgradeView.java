@@ -29,16 +29,17 @@ public class UpgradeView extends Group {
         this.upgradeViews = upgradeViews;
         setPosition(coordinate.x * Board.CELL_SIZE, coordinate.y * Board.CELL_SIZE);
 
-//        Image image = new Image(Config.skin, upgradeDescription.icon);
-//        image.setSize(Board.CELL_SIZE, Board.CELL_SIZE);
-//        image.setScaling(Scaling.none);
-//        image.setAlign(Align.center);
+        Image image = new Image(Config.skin, "upgrades/" + upgradeDescription.icon);
+        image.setSize(Board.CELL_SIZE, Board.CELL_SIZE);
+        image.setScaling(Scaling.none);
+        image.setAlign(Align.center);
+        addActor(image);
 
-        Label descLabel = new Label(upgradeDescription.icon, Config.skin);
-        descLabel.setWrap(true);
-        descLabel.setSize(Board.CELL_SIZE, Board.CELL_SIZE);
-        descLabel.setAlignment(Align.center);
-        addActor(descLabel);
+//        Label descLabel = new Label(upgradeDescription.icon, Config.skin);
+//        descLabel.setWrap(true);
+//        descLabel.setSize(Board.CELL_SIZE, Board.CELL_SIZE);
+//        descLabel.setAlignment(Align.center);
+//        addActor(descLabel);
     }
 
     @Override

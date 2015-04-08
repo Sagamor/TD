@@ -47,12 +47,13 @@ public class Marker extends Group {
         Image image;
         if (id == 116) {
             image = new Image(Config.skin, "objects/" + idToFileName.get(id));
-            image.setSize(Board.CELL_SIZE * 1.7f, Board.CELL_SIZE * 1.7f);
+            image.setSize(Board.CELL_SIZE * 1.3f, Board.CELL_SIZE * 1.3f);
         } else {
             image = new Image(Config.skin, "objects/tower_" + idToFileName.get(id));
-            image.setSize(Board.CELL_SIZE / 2f, Board.CELL_SIZE / 2f);
+            image.setSize(Board.CELL_SIZE, Board.CELL_SIZE);
         }
         image.setPosition(Board.CELL_SIZE / 2f - image.getWidth() / 2f, Board.CELL_SIZE / 2f - image.getHeight() / 2f);
+        image.setOrigin(image.getWidth() / 2f, image.getHeight() / 2f);
         return image;
     }
 
@@ -68,9 +69,9 @@ public class Marker extends Group {
 
     public static void floating(final Image tower) {
         tower.addAction(Actions.sequence(
-                Actions.sizeTo(Board.CELL_SIZE / 2.2f, Board.CELL_SIZE / 2.2f, 1.5f),
-                Actions.delay(0.05f),
-                Actions.sizeTo(Board.CELL_SIZE / 2f, Board.CELL_SIZE / 2f, 2.5f),
+                Actions.scaleTo(0.92f, 0.92f, 1.5f),
+                Actions.delay(0.25f),
+                Actions.scaleTo(1.0f, 1.0f, 2.5f),
                 Actions.run(new Runnable() {
                     @Override
                     public void run() {
